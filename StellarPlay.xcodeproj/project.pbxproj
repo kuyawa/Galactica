@@ -1,0 +1,418 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F4A9BDCB201829EC00742C73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A9BDCA201829EC00742C73 /* AppDelegate.swift */; };
+		F4A9BDCD201829EC00742C73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A9BDCC201829EC00742C73 /* ViewController.swift */; };
+		F4A9BDCF201829EC00742C73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4A9BDCE201829EC00742C73 /* Assets.xcassets */; };
+		F4A9BDD2201829EC00742C73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4A9BDD0201829EC00742C73 /* Main.storyboard */; };
+		F4A9BDDD201829EC00742C73 /* StellarPlayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A9BDDC201829EC00742C73 /* StellarPlayTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F4A9BDD9201829EC00742C73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4A9BDBF201829EC00742C73 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F4A9BDC6201829EC00742C73;
+			remoteInfo = StellarPlay;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F4A9BDC7201829EC00742C73 /* StellarPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StellarPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4A9BDCA201829EC00742C73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F4A9BDCC201829EC00742C73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F4A9BDCE201829EC00742C73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F4A9BDD1201829EC00742C73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F4A9BDD3201829EC00742C73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4A9BDD8201829EC00742C73 /* StellarPlayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StellarPlayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4A9BDDC201829EC00742C73 /* StellarPlayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StellarPlayTests.swift; sourceTree = "<group>"; };
+		F4A9BDDE201829EC00742C73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F4A9BDC4201829EC00742C73 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4A9BDD5201829EC00742C73 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F4A9BDBE201829EC00742C73 = {
+			isa = PBXGroup;
+			children = (
+				F4A9BDC9201829EC00742C73 /* StellarPlay */,
+				F4A9BDDB201829EC00742C73 /* StellarPlayTests */,
+				F4A9BDC8201829EC00742C73 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F4A9BDC8201829EC00742C73 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4A9BDC7201829EC00742C73 /* StellarPlay.app */,
+				F4A9BDD8201829EC00742C73 /* StellarPlayTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F4A9BDC9201829EC00742C73 /* StellarPlay */ = {
+			isa = PBXGroup;
+			children = (
+				F4A9BDCA201829EC00742C73 /* AppDelegate.swift */,
+				F4A9BDCC201829EC00742C73 /* ViewController.swift */,
+				F4A9BDCE201829EC00742C73 /* Assets.xcassets */,
+				F4A9BDD0201829EC00742C73 /* Main.storyboard */,
+				F4A9BDD3201829EC00742C73 /* Info.plist */,
+			);
+			path = StellarPlay;
+			sourceTree = "<group>";
+		};
+		F4A9BDDB201829EC00742C73 /* StellarPlayTests */ = {
+			isa = PBXGroup;
+			children = (
+				F4A9BDDC201829EC00742C73 /* StellarPlayTests.swift */,
+				F4A9BDDE201829EC00742C73 /* Info.plist */,
+			);
+			path = StellarPlayTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F4A9BDC6201829EC00742C73 /* StellarPlay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4A9BDE1201829EC00742C73 /* Build configuration list for PBXNativeTarget "StellarPlay" */;
+			buildPhases = (
+				F4A9BDC3201829EC00742C73 /* Sources */,
+				F4A9BDC4201829EC00742C73 /* Frameworks */,
+				F4A9BDC5201829EC00742C73 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StellarPlay;
+			productName = StellarPlay;
+			productReference = F4A9BDC7201829EC00742C73 /* StellarPlay.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F4A9BDD7201829EC00742C73 /* StellarPlayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4A9BDE4201829EC00742C73 /* Build configuration list for PBXNativeTarget "StellarPlayTests" */;
+			buildPhases = (
+				F4A9BDD4201829EC00742C73 /* Sources */,
+				F4A9BDD5201829EC00742C73 /* Frameworks */,
+				F4A9BDD6201829EC00742C73 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F4A9BDDA201829EC00742C73 /* PBXTargetDependency */,
+			);
+			name = StellarPlayTests;
+			productName = StellarPlayTests;
+			productReference = F4A9BDD8201829EC00742C73 /* StellarPlayTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F4A9BDBF201829EC00742C73 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = Armonia;
+				TargetAttributes = {
+					F4A9BDC6201829EC00742C73 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = W7PMV9XFGM;
+						ProvisioningStyle = Automatic;
+					};
+					F4A9BDD7201829EC00742C73 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = W7PMV9XFGM;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F4A9BDC6201829EC00742C73;
+					};
+				};
+			};
+			buildConfigurationList = F4A9BDC2201829EC00742C73 /* Build configuration list for PBXProject "StellarPlay" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F4A9BDBE201829EC00742C73;
+			productRefGroup = F4A9BDC8201829EC00742C73 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F4A9BDC6201829EC00742C73 /* StellarPlay */,
+				F4A9BDD7201829EC00742C73 /* StellarPlayTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F4A9BDC5201829EC00742C73 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4A9BDCF201829EC00742C73 /* Assets.xcassets in Resources */,
+				F4A9BDD2201829EC00742C73 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4A9BDD6201829EC00742C73 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F4A9BDC3201829EC00742C73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4A9BDCD201829EC00742C73 /* ViewController.swift in Sources */,
+				F4A9BDCB201829EC00742C73 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4A9BDD4201829EC00742C73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4A9BDDD201829EC00742C73 /* StellarPlayTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F4A9BDDA201829EC00742C73 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F4A9BDC6201829EC00742C73 /* StellarPlay */;
+			targetProxy = F4A9BDD9201829EC00742C73 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F4A9BDD0201829EC00742C73 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4A9BDD1201829EC00742C73 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F4A9BDDF201829EC00742C73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F4A9BDE0201829EC00742C73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		F4A9BDE2201829EC00742C73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = W7PMV9XFGM;
+				INFOPLIST_FILE = StellarPlay/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Armonia.StellarPlay;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		F4A9BDE3201829EC00742C73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = W7PMV9XFGM;
+				INFOPLIST_FILE = StellarPlay/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Armonia.StellarPlay;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		F4A9BDE5201829EC00742C73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = W7PMV9XFGM;
+				INFOPLIST_FILE = StellarPlayTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Armonia.StellarPlayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StellarPlay.app/Contents/MacOS/StellarPlay";
+			};
+			name = Debug;
+		};
+		F4A9BDE6201829EC00742C73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = W7PMV9XFGM;
+				INFOPLIST_FILE = StellarPlayTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Armonia.StellarPlayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StellarPlay.app/Contents/MacOS/StellarPlay";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F4A9BDC2201829EC00742C73 /* Build configuration list for PBXProject "StellarPlay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4A9BDDF201829EC00742C73 /* Debug */,
+				F4A9BDE0201829EC00742C73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4A9BDE1201829EC00742C73 /* Build configuration list for PBXNativeTarget "StellarPlay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4A9BDE2201829EC00742C73 /* Debug */,
+				F4A9BDE3201829EC00742C73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F4A9BDE4201829EC00742C73 /* Build configuration list for PBXNativeTarget "StellarPlayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4A9BDE5201829EC00742C73 /* Debug */,
+				F4A9BDE6201829EC00742C73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F4A9BDBF201829EC00742C73 /* Project object */;
+}
