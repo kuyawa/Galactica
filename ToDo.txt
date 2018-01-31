@@ -1,7 +1,8 @@
 TODO:
 
-- Show balances
-- Load assets from horizon
+- Ledger: List all operations
+x Show balances
+x Load assets from horizon
 - Account Icons: cash:note savings:piggy vault:vault business:cashier donations:hat
 - Finish basic StellarSDK
 - Create account generator and friendbot funder
