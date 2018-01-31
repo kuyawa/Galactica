@@ -14,6 +14,9 @@
 		F478A49C2021FF090094A7F7 /* AccountCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F478A4992021FF090094A7F7 /* AccountCellView.xib */; };
 		F478A49D2021FF090094A7F7 /* TableAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F478A49A2021FF090094A7F7 /* TableAccounts.swift */; };
 		F478A49F2021FF530094A7F7 /* Stuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = F478A49E2021FF530094A7F7 /* Stuff.swift */; };
+		F478A4A12022019D0094A7F7 /* TableAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F478A4A02022019D0094A7F7 /* TableAssets.swift */; };
+		F478A4A3202203CB0094A7F7 /* AssetCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F478A4A2202203CB0094A7F7 /* AssetCellView.xib */; };
+		F478A4A5202203DA0094A7F7 /* AssetCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F478A4A4202203DA0094A7F7 /* AssetCellView.swift */; };
 		F4A9BDCB201829EC00742C73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A9BDCA201829EC00742C73 /* AppDelegate.swift */; };
 		F4A9BDCD201829EC00742C73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A9BDCC201829EC00742C73 /* ViewController.swift */; };
 		F4A9BDCF201829EC00742C73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4A9BDCE201829EC00742C73 /* Assets.xcassets */; };
@@ -59,6 +62,9 @@
 		F478A4992021FF090094A7F7 /* AccountCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountCellView.xib; sourceTree = "<group>"; };
 		F478A49A2021FF090094A7F7 /* TableAccounts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableAccounts.swift; sourceTree = "<group>"; };
 		F478A49E2021FF530094A7F7 /* Stuff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stuff.swift; sourceTree = "<group>"; };
+		F478A4A02022019D0094A7F7 /* TableAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableAssets.swift; sourceTree = "<group>"; };
+		F478A4A2202203CB0094A7F7 /* AssetCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AssetCellView.xib; sourceTree = "<group>"; };
+		F478A4A4202203DA0094A7F7 /* AssetCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetCellView.swift; sourceTree = "<group>"; };
 		F4A9BDC7201829EC00742C73 /* StellarPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StellarPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4A9BDCA201829EC00742C73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4A9BDCC201829EC00742C73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
@@ -110,7 +116,10 @@
 			children = (
 				F478A4982021FF090094A7F7 /* AccountCellView.swift */,
 				F478A4992021FF090094A7F7 /* AccountCellView.xib */,
+				F478A4A4202203DA0094A7F7 /* AssetCellView.swift */,
+				F478A4A2202203CB0094A7F7 /* AssetCellView.xib */,
 				F478A49A2021FF090094A7F7 /* TableAccounts.swift */,
+				F478A4A02022019D0094A7F7 /* TableAssets.swift */,
 			);
 			path = Tables;
 			sourceTree = "<group>";
@@ -254,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4A9BDCF201829EC00742C73 /* Assets.xcassets in Resources */,
+				F478A4A3202203CB0094A7F7 /* AssetCellView.xib in Resources */,
 				F478A49C2021FF090094A7F7 /* AccountCellView.xib in Resources */,
 				F4A9BDD2201829EC00742C73 /* Main.storyboard in Resources */,
 			);
@@ -278,7 +288,9 @@
 				F478A49D2021FF090094A7F7 /* TableAccounts.swift in Sources */,
 				F478A49B2021FF090094A7F7 /* AccountCellView.swift in Sources */,
 				F478A4942021FEA80094A7F7 /* Keychain.swift in Sources */,
+				F478A4A12022019D0094A7F7 /* TableAssets.swift in Sources */,
 				F478A4962021FEA80094A7F7 /* TextClick.swift in Sources */,
+				F478A4A5202203DA0094A7F7 /* AssetCellView.swift in Sources */,
 				F478A49F2021FF530094A7F7 /* Stuff.swift in Sources */,
 				F478A4952021FEA80094A7F7 /* Storage.swift in Sources */,
 			);

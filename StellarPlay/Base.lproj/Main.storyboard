@@ -862,7 +862,7 @@
                                                         </subviews>
                                                     </clipView>
                                                     <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="Sax-A3-sSQ">
-                                                        <rect key="frame" x="1" y="-16" width="0.0" height="16"/>
+                                                        <rect key="frame" x="1" y="-15" width="0.0" height="16"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
                                                     <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="jXp-0A-PL3">
@@ -955,7 +955,7 @@
                                                         </subviews>
                                                     </clipView>
                                                     <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="0ST-NP-zUe">
-                                                        <rect key="frame" x="1" y="-16" width="0.0" height="16"/>
+                                                        <rect key="frame" x="1" y="-15" width="0.0" height="16"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
                                                     <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="aXr-pa-nOL">

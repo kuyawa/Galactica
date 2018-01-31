@@ -14,8 +14,9 @@ class ViewController: NSViewController, NSTextDelegate  {
 
     var app = NSApp.delegate as! AppDelegate
     //var listAccounts: [Storage.AccountData] = []
-    var selectedAccount = 0
+    var selectedAccount    = 0
     var accountsController = TableAccounts()
+    var assetsController   = TableAssets()
     
     @IBOutlet weak var labelAccounts : NSTextField!
     @IBOutlet weak var labelGenerate : NSTextField!
@@ -56,12 +57,12 @@ class ViewController: NSViewController, NSTextDelegate  {
 
     func main() {
         loadAccounts()
-        showBalances()
+        showBalances(0) // First account
     }
     
     func loadAccounts(){
         app.storage.loadAccounts(app)
-        accountsController.listAccounts   = app.storage.accounts
+        accountsController.list           = app.storage.accounts
         accountsController.tableView      = tableAccounts
         accountsController.tableSelection = showBalances
         tableAccounts.delegate   = accountsController
@@ -72,9 +73,9 @@ class ViewController: NSViewController, NSTextDelegate  {
         selectedAccount = 0
     }
     
-    func showBalances() {
+    func showBalances(_ selected: Int) {
         if selectedAccount < 0 { return }
-        let row = accountsController.listAccounts[selectedAccount]
+        let row = accountsController.list[selected]
         let net = row.net=="Test" ? StellarSDK.Horizon.Network.test : StellarSDK.Horizon.Network.live
         let account = StellarSDK.Account(row.key, net)
         account.getInfo { info in
