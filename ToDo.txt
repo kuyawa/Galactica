@@ -1,0 +1,45 @@
+TODO:
+
+- Show balances
+- Load assets from horizon
+- Account Icons: cash:note savings:piggy vault:vault business:cashier donations:hat
+- Finish basic StellarSDK
+- Create account generator and friendbot funder
+- Vanity generator
+- Ledger
+- Save secret key in Keychain
+  On init load keypair from secret in keychian
+
+Version 2
+
+- Inflation
+- Send money
+
+
+
+accounts
+if no account show panel to create new account
+once created and funded, use it as main
+show main panel: last payments
+
+Toolbar:
+info/balances, payments, operations, transactions, effects, offers, options
+
+Actions:
+fund account : address, amount, memo
+send payment : address, amount, asset, memo
+set inflation: address, memo
+
+----------------------------------------
+
+Cash       live     amount    asset    price    total
+public key [QR]     123.45     XLM     0.6500  650.00
+---------------
+Savings    test
+public key [QR]
+---------------
+Vault      test
+public key [QR]
+
+
+[New Account]

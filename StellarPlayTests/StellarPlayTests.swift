@@ -8,6 +8,8 @@
 
 import XCTest
 @testable import StellarPlay
+@testable import StellarSDK
+@testable import CryptoSwift
 
 class StellarPlayTests: XCTestCase {
     
@@ -17,13 +19,35 @@ class StellarPlayTests: XCTestCase {
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        print()
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testKeypair() {
+        print("\n---- \(#function)\n")
+        let keyPair   = KeyPair.random()
+        let publicKey = keyPair.publicKey
+        print(publicKey.base32)
+    }
+    
+    func testKeychain() {
+        print("\n---- \(#function)\n")
+        let pair = KeyPair.random()
+        let tag  = "account-00"
+        let val  = Data(pair.secretKey)
+        let ok   = Keychain.save(tag, val)
+        print("OK", ok)
+        XCTAssertTrue(ok, "Error saving to the keychain")
+    }
+    
+    func testHorizonTest() {
+        print("\n---- \(#function)\n")
+        //let keyPair   = KeyPair.random()
+        //let publicKey = keyPair.publicKey.base32
+        //let server    = StellarSDK.Horizon.test
+        //server.account(address: publicKey) { response in
+            //print("Raw:", response.raw)
+        //}
     }
     
     func testPerformanceExample() {

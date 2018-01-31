@@ -7,11 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F478A4942021FEA80094A7F7 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F478A4912021FEA80094A7F7 /* Keychain.swift */; };
+		F478A4952021FEA80094A7F7 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F478A4922021FEA80094A7F7 /* Storage.swift */; };
+		F478A4962021FEA80094A7F7 /* TextClick.swift in Sources */ = {isa = PBXBuildFile; fileRef = F478A4932021FEA80094A7F7 /* TextClick.swift */; };
+		F478A49B2021FF090094A7F7 /* AccountCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F478A4982021FF090094A7F7 /* AccountCellView.swift */; };
+		F478A49C2021FF090094A7F7 /* AccountCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F478A4992021FF090094A7F7 /* AccountCellView.xib */; };
+		F478A49D2021FF090094A7F7 /* TableAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F478A49A2021FF090094A7F7 /* TableAccounts.swift */; };
+		F478A49F2021FF530094A7F7 /* Stuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = F478A49E2021FF530094A7F7 /* Stuff.swift */; };
 		F4A9BDCB201829EC00742C73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A9BDCA201829EC00742C73 /* AppDelegate.swift */; };
 		F4A9BDCD201829EC00742C73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A9BDCC201829EC00742C73 /* ViewController.swift */; };
 		F4A9BDCF201829EC00742C73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4A9BDCE201829EC00742C73 /* Assets.xcassets */; };
 		F4A9BDD2201829EC00742C73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4A9BDD0201829EC00742C73 /* Main.storyboard */; };
 		F4A9BDDD201829EC00742C73 /* StellarPlayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A9BDDC201829EC00742C73 /* StellarPlayTests.swift */; };
+		F4A9BDEE20182CBE00742C73 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A9BDEC20182CBE00742C73 /* CryptoSwift.framework */; };
+		F4A9BDF120182CEF00742C73 /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4A9BDEC20182CBE00742C73 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F4D03B98201998500024797E /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A9BDEC20182CBE00742C73 /* CryptoSwift.framework */; };
+		F4D03B9D20199DD00024797E /* StellarSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D03B9C20199DD00024797E /* StellarSDK.framework */; };
+		F4D03B9F20199DDE0024797E /* StellarSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4D03B9C20199DD00024797E /* StellarSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,16 +36,41 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F4A9BDF220182CEF00742C73 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F4A9BDF120182CEF00742C73 /* CryptoSwift.framework in Embed Frameworks */,
+				F4D03B9F20199DDE0024797E /* StellarSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		F478A4912021FEA80094A7F7 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		F478A4922021FEA80094A7F7 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		F478A4932021FEA80094A7F7 /* TextClick.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextClick.swift; sourceTree = "<group>"; };
+		F478A4982021FF090094A7F7 /* AccountCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCellView.swift; sourceTree = "<group>"; };
+		F478A4992021FF090094A7F7 /* AccountCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountCellView.xib; sourceTree = "<group>"; };
+		F478A49A2021FF090094A7F7 /* TableAccounts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableAccounts.swift; sourceTree = "<group>"; };
+		F478A49E2021FF530094A7F7 /* Stuff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stuff.swift; sourceTree = "<group>"; };
 		F4A9BDC7201829EC00742C73 /* StellarPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StellarPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4A9BDCA201829EC00742C73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F4A9BDCC201829EC00742C73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F4A9BDCC201829EC00742C73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		F4A9BDCE201829EC00742C73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4A9BDD1201829EC00742C73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F4A9BDD3201829EC00742C73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4A9BDD8201829EC00742C73 /* StellarPlayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StellarPlayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4A9BDDC201829EC00742C73 /* StellarPlayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StellarPlayTests.swift; sourceTree = "<group>"; };
 		F4A9BDDE201829EC00742C73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4A9BDEC20182CBE00742C73 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = "<group>"; };
+		F4A9BDF5201830A200742C73 /* ToDo.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ToDo.txt; sourceTree = "<group>"; };
+		F4D03B9C20199DD00024797E /* StellarSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = StellarSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +78,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4A9BDEE20182CBE00742C73 /* CryptoSwift.framework in Frameworks */,
+				F4D03B9D20199DD00024797E /* StellarSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,17 +87,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4D03B98201998500024797E /* CryptoSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F478A4902021FE660094A7F7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F478A4912021FEA80094A7F7 /* Keychain.swift */,
+				F478A4922021FEA80094A7F7 /* Storage.swift */,
+				F478A4932021FEA80094A7F7 /* TextClick.swift */,
+				F478A49E2021FF530094A7F7 /* Stuff.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		F478A4972021FF090094A7F7 /* Tables */ = {
+			isa = PBXGroup;
+			children = (
+				F478A4982021FF090094A7F7 /* AccountCellView.swift */,
+				F478A4992021FF090094A7F7 /* AccountCellView.xib */,
+				F478A49A2021FF090094A7F7 /* TableAccounts.swift */,
+			);
+			path = Tables;
+			sourceTree = "<group>";
+		};
 		F4A9BDBE201829EC00742C73 = {
 			isa = PBXGroup;
 			children = (
+				F4A9BDF5201830A200742C73 /* ToDo.txt */,
 				F4A9BDC9201829EC00742C73 /* StellarPlay */,
 				F4A9BDDB201829EC00742C73 /* StellarPlayTests */,
+				F4A9BDEB20182CBE00742C73 /* Frameworks */,
 				F4A9BDC8201829EC00742C73 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -75,11 +138,13 @@
 		F4A9BDC9201829EC00742C73 /* StellarPlay */ = {
 			isa = PBXGroup;
 			children = (
+				F4A9BDD3201829EC00742C73 /* Info.plist */,
 				F4A9BDCA201829EC00742C73 /* AppDelegate.swift */,
 				F4A9BDCC201829EC00742C73 /* ViewController.swift */,
-				F4A9BDCE201829EC00742C73 /* Assets.xcassets */,
 				F4A9BDD0201829EC00742C73 /* Main.storyboard */,
-				F4A9BDD3201829EC00742C73 /* Info.plist */,
+				F4A9BDCE201829EC00742C73 /* Assets.xcassets */,
+				F478A4972021FF090094A7F7 /* Tables */,
+				F478A4902021FE660094A7F7 /* Utils */,
 			);
 			path = StellarPlay;
 			sourceTree = "<group>";
@@ -93,6 +158,15 @@
 			path = StellarPlayTests;
 			sourceTree = "<group>";
 		};
+		F4A9BDEB20182CBE00742C73 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F4A9BDEC20182CBE00742C73 /* CryptoSwift.framework */,
+				F4D03B9C20199DD00024797E /* StellarSDK.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,6 +177,7 @@
 				F4A9BDC3201829EC00742C73 /* Sources */,
 				F4A9BDC4201829EC00742C73 /* Frameworks */,
 				F4A9BDC5201829EC00742C73 /* Resources */,
+				F4A9BDF220182CEF00742C73 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -179,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4A9BDCF201829EC00742C73 /* Assets.xcassets in Resources */,
+				F478A49C2021FF090094A7F7 /* AccountCellView.xib in Resources */,
 				F4A9BDD2201829EC00742C73 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -199,6 +275,12 @@
 			files = (
 				F4A9BDCD201829EC00742C73 /* ViewController.swift in Sources */,
 				F4A9BDCB201829EC00742C73 /* AppDelegate.swift in Sources */,
+				F478A49D2021FF090094A7F7 /* TableAccounts.swift in Sources */,
+				F478A49B2021FF090094A7F7 /* AccountCellView.swift in Sources */,
+				F478A4942021FEA80094A7F7 /* Keychain.swift in Sources */,
+				F478A4962021FEA80094A7F7 /* TextClick.swift in Sources */,
+				F478A49F2021FF530094A7F7 /* Stuff.swift in Sources */,
+				F478A4952021FEA80094A7F7 /* Storage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +412,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = W7PMV9XFGM;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = StellarPlay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Armonia.StellarPlay;
@@ -344,6 +430,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = W7PMV9XFGM;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = StellarPlay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Armonia.StellarPlay;
@@ -357,12 +447,18 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = W7PMV9XFGM;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = StellarPlayTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Armonia.StellarPlayTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StellarPlay.app/Contents/MacOS/StellarPlay";
 			};
@@ -373,12 +469,18 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = W7PMV9XFGM;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = StellarPlayTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Armonia.StellarPlayTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StellarPlay.app/Contents/MacOS/StellarPlay";
 			};
@@ -403,6 +505,7 @@
 				F4A9BDE3201829EC00742C73 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F4A9BDE4201829EC00742C73 /* Build configuration list for PBXNativeTarget "StellarPlayTests" */ = {
 			isa = XCConfigurationList;
@@ -411,6 +514,7 @@
 				F4A9BDE6201829EC00742C73 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
