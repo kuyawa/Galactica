@@ -8,6 +8,15 @@
 
 import Cocoa
 
+
+class AccountCellView: NSTableCellView {
+   
+    @IBOutlet weak var textName    : NSTextField!
+    @IBOutlet weak var textAddress : NSTextField!
+    @IBOutlet weak var textNetwork : NSTextField!
+    
+}
+
 class TableAccounts: NSObject, NSTableViewDataSource, NSTableViewDelegate {
 
     var tableView: NSTableView?

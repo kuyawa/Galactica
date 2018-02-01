@@ -59,6 +59,12 @@ extension String {
     }
 }
 
+extension Int {
+    var str : String {
+        return String(describing: self)
+    }
+}
+
 extension Double {
     var money: String {
         let value = NSNumber(value: self)

@@ -10,15 +10,19 @@ import Cocoa
 import StellarSDK
 
 
-class ViewController: NSViewController, NSTextDelegate  {
+class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
 
     var app = NSApp.delegate as! AppDelegate
-    //var listAccounts: [Storage.AccountData] = []
-    var selectedAccount    = 0
-    var accountsController = TableAccounts()
-    var assetsController   = TableAssets()
-    var paymentsController = TablePayments()
+    var selectedAccount = 0
     
+    // Table controllers
+    var accountsController     = TableAccounts()
+    var assetsController       = TableAssets()
+    var paymentsController     = TablePayments()
+    var operationsController   = TableOperations()
+    var transactionsController = TableTransactions()
+    var effectsController      = TableEffects()
+    var offersController       = TableOffers()
     
     // Main view
     @IBOutlet weak var labelAccounts : NSTextField!
@@ -58,7 +62,7 @@ class ViewController: NSViewController, NSTextDelegate  {
             let num = tabLedger.indexOfTabViewItem(tab)
             if num < 1 && paymentsController.list.count < 1 {
                 let account = accountsController.list[selectedAccount]
-                self.paymentsController.loadPayments(address: account.key, network: (account.net == "Test" ? .test : .live))
+                self.paymentsController.load(from: account)
             }
         }
     }
@@ -71,7 +75,15 @@ class ViewController: NSViewController, NSTextDelegate  {
     }
 
     func main() {
-        paymentsController.tableView = tablePayments
+        // Assign tables to controllers
+        tabLedger.delegate = self
+        paymentsController.tableView     = tablePayments
+        operationsController.tableView   = tableOperations
+        transactionsController.tableView = tableTransactions
+        effectsController.tableView      = tableEffects
+        offersController.tableView       = tableOffers
+        
+        // Load initial data
         loadAccounts()
         loadAssets(0) // First account
     }
@@ -106,8 +118,48 @@ class ViewController: NSViewController, NSTextDelegate  {
         }
     }
 
+    func loadPayments(refresh: Bool? = false) {
+        if selectedAccount < 0 || selectedAccount >= accountsController.list.count { return }
+        let account = accountsController.list[selectedAccount]
+        if refresh! || paymentsController.list.count < 1 {
+            paymentsController.load(from: account)
+        }
+    }
+
+    func loadOperations(refresh: Bool? = false) {
+        if selectedAccount < 0 || selectedAccount >= accountsController.list.count { return }
+        let account = accountsController.list[selectedAccount]
+        if refresh! || operationsController.list.count < 1 {
+            operationsController.load(from: account)
+        }
+    }
+
+    func loadTransactions(refresh: Bool? = false) {
+        if selectedAccount < 0 || selectedAccount >= accountsController.list.count { return }
+        let account = accountsController.list[selectedAccount]
+        if refresh! || transactionsController.list.count < 1 {
+            transactionsController.load(from: account)
+        }
+    }
+    
+    func loadEffects(refresh: Bool? = false) {
+        if selectedAccount < 0 || selectedAccount >= accountsController.list.count { return }
+        let account = accountsController.list[selectedAccount]
+        if refresh! || effectsController.list.count < 1 {
+            effectsController.load(from: account)
+        }
+    }
+    
+    func loadOffers(refresh: Bool? = false) {
+        if selectedAccount < 0 || selectedAccount >= accountsController.list.count { return }
+        let account = accountsController.list[selectedAccount]
+        if refresh! || offersController.list.count < 1 {
+            offersController.load(from: account)
+        }
+    }
+    
     func assetsLoading() {
-        // Temp fix, rethink
+        // Temp fix, rethink, use status abr
         var assets: [AssetData] = []
         let asset = AssetData(symbol: "Loading...", issuer: "Wait while we fetch the server", amount: "")
         assets.append(asset)
@@ -126,7 +178,20 @@ class ViewController: NSViewController, NSTextDelegate  {
         //selectedAsset = 0
     }
     
-    
+    func tabView(_ tabView: NSTabView, didSelect tabViewItem: NSTabViewItem?) {
+        guard let tab = tabViewItem else { return }
+        let index = tabLedger.indexOfTabViewItem(tab)
+        //print("Tab selected", index)
+        
+        switch index {
+        case 0: loadPayments(); break
+        case 1: loadOperations(); break
+        case 2: loadTransactions(); break
+        case 3: loadEffects(); break
+        case 4: loadOffers(); break
+        default: break
+        }
+    }
     
 }
 

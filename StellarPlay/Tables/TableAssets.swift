@@ -14,6 +14,14 @@ struct AssetData {
     var amount = ""
 }
 
+class AssetCellView: NSTableCellView {
+    
+    @IBOutlet weak var textSymbol : NSTextField!
+    @IBOutlet weak var textIssuer : NSTextField!
+    @IBOutlet weak var textAmount : NSTextField!
+
+}
+
 class TableAssets: NSObject, NSTableViewDataSource, NSTableViewDelegate {
     
     var tableView: NSTableView?
