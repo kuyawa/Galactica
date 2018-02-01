@@ -34,7 +34,7 @@ class TableAssets: NSObject, NSTableViewDataSource, NSTableViewDelegate {
         if let cell = tableView.make(withIdentifier: cellId, owner: nil) as? AssetCellView {
             cell.textSymbol?.stringValue = item.symbol
             cell.textIssuer?.stringValue = item.issuer
-            cell.textAmount?.stringValue = item.amount
+            cell.textAmount?.stringValue = item.amount.money
             
             return cell
         }

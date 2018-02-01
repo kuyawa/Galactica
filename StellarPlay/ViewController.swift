@@ -17,8 +17,8 @@ class ViewController: NSViewController, NSTextDelegate  {
     var selectedAccount    = 0
     var accountsController = TableAccounts()
     var assetsController   = TableAssets()
+    var paymentsController = TablePayments()
     
-    @IBOutlet weak var tabMain: NSTabView!
     
     // Main view
     @IBOutlet weak var labelAccounts : NSTextField!
@@ -26,13 +26,23 @@ class ViewController: NSViewController, NSTextDelegate  {
     @IBOutlet weak var labelLedger   : NSTextField!
 
     // Tables
-    @IBOutlet weak var tableAccounts : NSTableView!
-    @IBOutlet weak var tableAssets   : NSTableView!
+    @IBOutlet weak var tableAccounts     : NSTableView!
+    @IBOutlet weak var tableAssets       : NSTableView!
+    @IBOutlet weak var tablePayments     : NSTableView!
+    @IBOutlet weak var tableOperations   : NSTableView!
+    @IBOutlet weak var tableTransactions : NSTableView!
+    @IBOutlet weak var tableEffects      : NSTableView!
+    @IBOutlet weak var tableOffers       : NSTableView!
     
+
     // Generate address
     @IBOutlet weak var textAddress : NSTextField!
     @IBOutlet weak var textSecret  : NSTextField!
     
+    
+    // TabView
+    @IBOutlet weak var tabMain   : NSTabView!
+    @IBOutlet weak var tabLedger : NSTabView!
     
     @IBAction func onTabAccounts(_ sender: AnyObject) {
         tabMain.selectTabViewItem(at: 0)
@@ -44,14 +54,13 @@ class ViewController: NSViewController, NSTextDelegate  {
     
     @IBAction func onTabLedger(_ sender: AnyObject) {
         tabMain.selectTabViewItem(at: 2)
-    }
-    
-    @IBAction func onGenerate(_ sender: Any) {
-        generateKeypair()
-    }
-    
-    @IBAction func onFunding(_ sender: Any) {
-        fundAccount()
+        if let tab = tabLedger.selectedTabViewItem {
+            let num = tabLedger.indexOfTabViewItem(tab)
+            if num < 1 && paymentsController.list.count < 1 {
+                let account = accountsController.list[selectedAccount]
+                self.paymentsController.loadPayments(address: account.key, network: (account.net == "Test" ? .test : .live))
+            }
+        }
     }
     
     override func viewDidLoad() {
@@ -62,6 +71,7 @@ class ViewController: NSViewController, NSTextDelegate  {
     }
 
     func main() {
+        paymentsController.tableView = tablePayments
         loadAccounts()
         loadAssets(0) // First account
     }
@@ -116,35 +126,7 @@ class ViewController: NSViewController, NSTextDelegate  {
         //selectedAsset = 0
     }
     
-    func generateKeypair() {
-        let keyPair = KeyPair.random()
-        textAddress.stringValue = keyPair.publicKey.base32
-        textSecret.stringValue  = keyPair.secretKey.base32
-    }
     
-    func testAccountInfo() {
-        let keyPair   = KeyPair.random()
-        let publicKey = keyPair.publicKey.base32
-        let server    = StellarSDK.Horizon.test
-        server.account(address: publicKey) { response in
-            print("Raw:", response.text)
-        }
-        
-    }
-    
-    func fundAccount() {
-        let address = textAddress.stringValue
-        let server  = StellarSDK.Horizon.test
-        server.friendbot(address: address) { response in
-            print("Raw:", response.text)
-            let envelope = response.json["envelope_xdr"] as! String
-            print("Env:", envelope)
-            let data = Data(base64Encoded: envelope)!
-            print("Data:", data.bytes)
-            let info = String(xdr: data)
-            print("Info:", info)
-        }
-    }
     
 }
 

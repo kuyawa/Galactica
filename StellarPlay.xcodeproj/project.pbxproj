@@ -17,6 +17,8 @@
 		F478A4A12022019D0094A7F7 /* TableAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F478A4A02022019D0094A7F7 /* TableAssets.swift */; };
 		F478A4A3202203CB0094A7F7 /* AssetCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F478A4A2202203CB0094A7F7 /* AssetCellView.xib */; };
 		F478A4A5202203DA0094A7F7 /* AssetCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F478A4A4202203DA0094A7F7 /* AssetCellView.swift */; };
+		F494378920224A93006CC8DB /* Accounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F494378820224A93006CC8DB /* Accounts.swift */; };
+		F494378B20224D93006CC8DB /* Ledger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F494378A20224D93006CC8DB /* Ledger.swift */; };
 		F4A9BDCB201829EC00742C73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A9BDCA201829EC00742C73 /* AppDelegate.swift */; };
 		F4A9BDCD201829EC00742C73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A9BDCC201829EC00742C73 /* ViewController.swift */; };
 		F4A9BDCF201829EC00742C73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4A9BDCE201829EC00742C73 /* Assets.xcassets */; };
@@ -24,6 +26,8 @@
 		F4A9BDDD201829EC00742C73 /* StellarPlayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A9BDDC201829EC00742C73 /* StellarPlayTests.swift */; };
 		F4A9BDEE20182CBE00742C73 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A9BDEC20182CBE00742C73 /* CryptoSwift.framework */; };
 		F4A9BDF120182CEF00742C73 /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4A9BDEC20182CBE00742C73 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F4B6B0D82022943500C8C4F2 /* TablePayments.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B6B0D72022943500C8C4F2 /* TablePayments.swift */; };
+		F4B6B0DD2022AFC100C8C4F2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B6B0DC2022AFC100C8C4F2 /* Utils.swift */; };
 		F4D03B98201998500024797E /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A9BDEC20182CBE00742C73 /* CryptoSwift.framework */; };
 		F4D03B9D20199DD00024797E /* StellarSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D03B9C20199DD00024797E /* StellarSDK.framework */; };
 		F4D03B9F20199DDE0024797E /* StellarSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4D03B9C20199DD00024797E /* StellarSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -65,8 +69,10 @@
 		F478A4A02022019D0094A7F7 /* TableAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableAssets.swift; sourceTree = "<group>"; };
 		F478A4A2202203CB0094A7F7 /* AssetCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AssetCellView.xib; sourceTree = "<group>"; };
 		F478A4A4202203DA0094A7F7 /* AssetCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetCellView.swift; sourceTree = "<group>"; };
+		F494378820224A93006CC8DB /* Accounts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Accounts.swift; sourceTree = "<group>"; };
+		F494378A20224D93006CC8DB /* Ledger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ledger.swift; sourceTree = "<group>"; };
 		F4A9BDC7201829EC00742C73 /* StellarPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StellarPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4A9BDCA201829EC00742C73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F4A9BDCA201829EC00742C73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		F4A9BDCC201829EC00742C73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		F4A9BDCE201829EC00742C73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4A9BDD1201829EC00742C73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -76,6 +82,8 @@
 		F4A9BDDE201829EC00742C73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4A9BDEC20182CBE00742C73 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = "<group>"; };
 		F4A9BDF5201830A200742C73 /* ToDo.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ToDo.txt; sourceTree = "<group>"; };
+		F4B6B0D72022943500C8C4F2 /* TablePayments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TablePayments.swift; sourceTree = "<group>"; };
+		F4B6B0DC2022AFC100C8C4F2 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		F4D03B9C20199DD00024797E /* StellarSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = StellarSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +115,7 @@
 				F478A4922021FEA80094A7F7 /* Storage.swift */,
 				F478A4932021FEA80094A7F7 /* TextClick.swift */,
 				F478A49E2021FF530094A7F7 /* Stuff.swift */,
+				F4B6B0DC2022AFC100C8C4F2 /* Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -120,6 +129,7 @@
 				F478A4A2202203CB0094A7F7 /* AssetCellView.xib */,
 				F478A49A2021FF090094A7F7 /* TableAccounts.swift */,
 				F478A4A02022019D0094A7F7 /* TableAssets.swift */,
+				F4B6B0D72022943500C8C4F2 /* TablePayments.swift */,
 			);
 			path = Tables;
 			sourceTree = "<group>";
@@ -149,6 +159,8 @@
 			children = (
 				F4A9BDD3201829EC00742C73 /* Info.plist */,
 				F4A9BDCA201829EC00742C73 /* AppDelegate.swift */,
+				F494378820224A93006CC8DB /* Accounts.swift */,
+				F494378A20224D93006CC8DB /* Ledger.swift */,
 				F4A9BDCC201829EC00742C73 /* ViewController.swift */,
 				F4A9BDD0201829EC00742C73 /* Main.storyboard */,
 				F4A9BDCE201829EC00742C73 /* Assets.xcassets */,
@@ -285,6 +297,10 @@
 			files = (
 				F4A9BDCD201829EC00742C73 /* ViewController.swift in Sources */,
 				F4A9BDCB201829EC00742C73 /* AppDelegate.swift in Sources */,
+				F494378B20224D93006CC8DB /* Ledger.swift in Sources */,
+				F4B6B0DD2022AFC100C8C4F2 /* Utils.swift in Sources */,
+				F4B6B0D82022943500C8C4F2 /* TablePayments.swift in Sources */,
+				F494378920224A93006CC8DB /* Accounts.swift in Sources */,
 				F478A49D2021FF090094A7F7 /* TableAccounts.swift in Sources */,
 				F478A49B2021FF090094A7F7 /* AccountCellView.swift in Sources */,
 				F478A4942021FEA80094A7F7 /* Keychain.swift in Sources */,

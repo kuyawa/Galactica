@@ -1,6 +1,9 @@
 TODO:
 
 - Ledger: List all operations
+  alternate rows
+  date utils, money utils
+  refresh button, cache results
 x Show balances
 x Load assets from horizon
 - Account Icons: cash:note savings:piggy vault:vault business:cashier donations:hat
