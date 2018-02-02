@@ -35,18 +35,16 @@ class Stuff {
         // Set
         //let pair = KeyPair.random()
         //print("Secret", pair.secretKey) // [144, 237, 77, 115, 54, 60, 240, 46, 23, 214, 67, 159, 194, 168, 120, 173, 83, 202, 178, 49, 248, 125, 50, 205, 35, 173, 221, 224, 12, 42, 31, 22, 125, 86, 92]
-        //let val  = pair.secretKey       // SDWU24ZWHTYC4F6WIOP4FKDYVVJ4VMRR7B6TFTJDVXO6ADBKD4LH2VS4
-        //ok = Keychain.save(key, Data(val))
-        //print("OK", ok, val.base32, val)
+        //let val  = pair.secretKey.base32       // SDWU24ZWHTYC4F6WIOP4FKDYVVJ4VMRR7B6TFTJDVXO6ADBKD4LH2VS4
+        //ok = Keychain.save(key, val)
+        //print("OK", ok, val, pair.secretKey)
         
         // Get
         //let xxx = [144, 237, 77, 115, 54, 60, 240, 46, 23, 214, 67, 159, 194, 168, 120, 173, 83, 202, 178, 49, 248, 125, 50, 205, 35, 173, 221, 224, 12, 42, 31, 22, 125, 86, 92]
         //print(xxx)
-        //var sec = "?"
-        //if let val = Keychain.load(key) {
-        //   sec = val.base32
+        //if let secretKey = Keychain.load(key) {
+        //   print("OK", secretKey)
         //}
-        //print("OK", sec)
     }
     
 

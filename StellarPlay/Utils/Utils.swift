@@ -9,6 +9,7 @@
 import Foundation
 import Cocoa
 
+typealias Completion = () -> ()
 
 extension String {
     

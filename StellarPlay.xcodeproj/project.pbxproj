@@ -113,8 +113,8 @@
 			children = (
 				F478A4912021FEA80094A7F7 /* Keychain.swift */,
 				F478A4922021FEA80094A7F7 /* Storage.swift */,
-				F478A4932021FEA80094A7F7 /* TextClick.swift */,
 				F478A49E2021FF530094A7F7 /* Stuff.swift */,
+				F478A4932021FEA80094A7F7 /* TextClick.swift */,
 				F4B6B0DC2022AFC100C8C4F2 /* Utils.swift */,
 			);
 			path = Utils;

@@ -17,7 +17,7 @@ class TablePayments: NSObject, NSTableViewDataSource, NSTableViewDelegate {
     var list: [StellarSDK.PaymentResponse] = []
     var selected = 0
     
-    func load(from: Storage.AccountData) {
+    func load(from: Storage.AccountData, onReady: @escaping Completion) {
         let address = from.key
         let network: StellarSDK.Horizon.Network = (from.net == "Test" ? .test : .live)
         let account = StellarSDK.Account(address, network)
@@ -34,6 +34,7 @@ class TablePayments: NSObject, NSTableViewDataSource, NSTableViewDelegate {
                 self.tableView?.delegate   = self
                 self.tableView?.dataSource = self
                 self.tableView?.reloadData()
+                onReady()
             }
         }
     }

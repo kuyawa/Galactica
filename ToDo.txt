@@ -1,33 +1,44 @@
 TODO:
 
+- APPICON!!!
+- On account selected set refresh ledger to true
+- Cache balances, add refresh button
 - Status bar at bottom for info and errors
-- Ledger: List all operations
 - refresh button, cache results
-x alternate rows
-x date utils, money utils
-x Show balances
-x Load assets from horizon
+- Save address to userdefaults and keychain
 - Account Icons: cash:note savings:piggy vault:vault business:cashier donations:hat
 - Finish basic StellarSDK
 - Create account generator and friendbot funder
 - Vanity generator
-- Ledger
-- Save secret key in Keychain
-  On init load keypair from secret in keychian
+
+DONE:
+
+x Resize all views
+x Ledger: List all operations
+x alternate rows
+x date utils, money utils
+x Show balances
+x Load assets from horizon
+x Save secret key in Keychain
+x On init load keypair from secret in keychian
 
 Version 2
 
-- Inflation
+- All submit operations
 - Send money
+- Inflation
+- Trust
+- Merge
+- Authorization
 
 
 
-accounts
+Accounts
 if no account show panel to create new account
 once created and funded, use it as main
 show main panel: last payments
 
-Toolbar:
+TabView
 info/balances, payments, operations, transactions, effects, offers, options
 
 Actions:
@@ -35,16 +46,4 @@ fund account : address, amount, memo
 send payment : address, amount, asset, memo
 set inflation: address, memo
 
-----------------------------------------
-
-Cash       live     amount    asset    price    total
-public key [QR]     123.45     XLM     0.6500  650.00
----------------
-Savings    test
-public key [QR]
----------------
-Vault      test
-public key [QR]
-
-
-[New Account]
+END

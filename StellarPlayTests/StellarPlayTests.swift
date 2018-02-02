@@ -30,6 +30,17 @@ class StellarPlayTests: XCTestCase {
         print(publicKey.base32)
     }
     
+    func testAccountInfo() {
+        print("\n---- \(#function)\n")
+        let keyPair   = KeyPair.random()
+        let publicKey = keyPair.publicKey.base32
+        print(publicKey)
+        //let server    = StellarSDK.Horizon.test
+        //server.account(address: publicKey) { response in
+        //    print("Raw:", response.text)
+        //}
+    }
+    
     func testKeychain() {
         print("\n---- \(#function)\n")
         let pair = KeyPair.random()

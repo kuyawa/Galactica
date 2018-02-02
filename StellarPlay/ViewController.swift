@@ -14,6 +14,8 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
 
     var app = NSApp.delegate as! AppDelegate
     var selectedAccount = 0
+    var refreshAccounts = false
+    var refreshLedger   = false
     
     // Table controllers
     var accountsController     = TableAccounts()
@@ -28,7 +30,8 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
     @IBOutlet weak var labelAccounts : NSTextField!
     @IBOutlet weak var labelGenerate : NSTextField!
     @IBOutlet weak var labelLedger   : NSTextField!
-
+    @IBOutlet weak var textStatus: NSTextField!
+        
     // Tables
     @IBOutlet weak var tableAccounts     : NSTableView!
     @IBOutlet weak var tableAssets       : NSTableView!
@@ -40,9 +43,11 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
     
 
     // Generate address
-    @IBOutlet weak var textAddress : NSTextField!
-    @IBOutlet weak var textSecret  : NSTextField!
-    
+    @IBOutlet weak var textName      : NSTextField!
+    @IBOutlet weak var textAddress   : NSTextField!
+    @IBOutlet weak var textSecret    : NSTextField!
+    @IBOutlet weak var buttonNetwork : NSSegmentedControl!
+    @IBOutlet weak var checkSecret   : NSButton!
     
     // TabView
     @IBOutlet weak var tabMain   : NSTabView!
@@ -50,6 +55,11 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
     
     @IBAction func onTabAccounts(_ sender: AnyObject) {
         tabMain.selectTabViewItem(at: 0)
+        if refreshAccounts {
+            loadAccounts()
+            loadAssets(0) // First account
+            refreshAccounts = false
+        }
     }
     
     @IBAction func onTabGenerate(_ sender: AnyObject) {
@@ -62,16 +72,19 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
             let num = tabLedger.indexOfTabViewItem(tab)
             if num < 1 && paymentsController.list.count < 1 {
                 let account = accountsController.list[selectedAccount]
-                self.paymentsController.load(from: account)
+                paymentsController.load(from: account) {}
             }
         }
+    }
+    
+    @IBAction func onSelectLedger(_ sender: AnyObject) {
+        tabMain.selectTabViewItem(at: 2)             // Ledger tab
+        tabLedger.selectTabViewItem(at: sender.tag)  // Selected tab
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         main()
-        //testAccountInfo()
-        //testKeychain()
     }
 
     func main() {
@@ -108,58 +121,77 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
         let net = row.net=="Test" ? StellarSDK.Horizon.Network.test : StellarSDK.Horizon.Network.live
         let account = StellarSDK.Account(row.key, net)
         account.getBalances { balances in
+            // TODO: if not balances, account not found
             var assets: [AssetData] = []
             for balance in balances {
                 print(balance.assetCode, balance.balance, balance.assetType)
                 let asset = AssetData(symbol: balance.assetCode, issuer: balance.assetIssuer, amount: balance.balance)
                 assets.append(asset)
             }
-            DispatchQueue.main.async { self.showAssets(assets) }
+            DispatchQueue.main.async {
+                self.showAssets(assets)
+                self.showStatus("Assets loaded")
+            }
         }
     }
 
     func loadPayments(refresh: Bool? = false) {
         if selectedAccount < 0 || selectedAccount >= accountsController.list.count { return }
+        self.showStatus("Loading payments, please wait...")
         let account = accountsController.list[selectedAccount]
         if refresh! || paymentsController.list.count < 1 {
-            paymentsController.load(from: account)
+            paymentsController.load(from: account) {
+                self.showStatus("Payments loaded")
+            }
         }
     }
 
     func loadOperations(refresh: Bool? = false) {
         if selectedAccount < 0 || selectedAccount >= accountsController.list.count { return }
+        self.showStatus("Loading operations, please wait...")
         let account = accountsController.list[selectedAccount]
         if refresh! || operationsController.list.count < 1 {
-            operationsController.load(from: account)
+            operationsController.load(from: account) {
+                self.showStatus("Operations loaded")
+            }
         }
     }
 
     func loadTransactions(refresh: Bool? = false) {
         if selectedAccount < 0 || selectedAccount >= accountsController.list.count { return }
+        self.showStatus("Loading transactions, please wait...")
         let account = accountsController.list[selectedAccount]
         if refresh! || transactionsController.list.count < 1 {
-            transactionsController.load(from: account)
+            transactionsController.load(from: account) {
+                self.showStatus("Transactions loaded")
+            }
         }
     }
     
     func loadEffects(refresh: Bool? = false) {
         if selectedAccount < 0 || selectedAccount >= accountsController.list.count { return }
+        self.showStatus("Loading effects, please wait...")
         let account = accountsController.list[selectedAccount]
         if refresh! || effectsController.list.count < 1 {
-            effectsController.load(from: account)
+            effectsController.load(from: account) {
+                self.showStatus("Effects loaded")
+            }
         }
     }
     
     func loadOffers(refresh: Bool? = false) {
         if selectedAccount < 0 || selectedAccount >= accountsController.list.count { return }
+        self.showStatus("Loading offers, please wait...")
         let account = accountsController.list[selectedAccount]
         if refresh! || offersController.list.count < 1 {
-            offersController.load(from: account)
+            offersController.load(from: account) {
+                self.showStatus("Offers loaded")
+            }
         }
     }
     
     func assetsLoading() {
-        // Temp fix, rethink, use status abr
+        showStatus("Loading assets, please wait...")
         var assets: [AssetData] = []
         let asset = AssetData(symbol: "Loading...", issuer: "Wait while we fetch the server", amount: "")
         assets.append(asset)
@@ -191,6 +223,14 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
         case 4: loadOffers(); break
         default: break
         }
+    }
+    
+    func showStatus(_ text: String) {
+        textStatus.stringValue = text
+    }
+    
+    func readyStatus(_ text: String) {
+        textStatus.stringValue = "Ready"
     }
     
 }

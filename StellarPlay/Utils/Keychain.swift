@@ -10,10 +10,14 @@ import Foundation
 import Security
 
 class Keychain {
-    static let prefix = "stellarplay.keychain.address."
+    static let prefix = "stellarplay.address."
 
-    class func save(_ key: String, _ data: Data) -> Bool {
-        let tag = (prefix + key).data(using: .utf8)!
+    // save("account-01", secretKey)
+    @discardableResult
+    class func save(_ key: String, _ secret: String) -> Bool {
+        guard let data = secret.data(using: .utf8) else { return false }
+
+        let tag  = (prefix + key).data(using: .utf8)!
         let query: [String: Any] = [
             kSecClass       as String : kSecClassGenericPassword,
             kSecAttrAccount as String : tag,
@@ -25,7 +29,8 @@ class Keychain {
         return status == noErr
     }
     
-    class func load(_ key: String) -> Data? {
+    // let secretKey = load("account-01")
+    class func load(_ key: String) -> String {
         let tag = (prefix + key).data(using: .utf8)!
         let query: [String: Any] = [
             kSecClass       as String : kSecClassGenericPassword,
@@ -37,12 +42,14 @@ class Keychain {
         let status: OSStatus = SecItemCopyMatching(query as CFDictionary, &dataTypeRef)
 
         if status == noErr {
-            return (dataTypeRef as! Data)
+            let data = (dataTypeRef as! Data)
+            return data.base32
         }
 
-        return nil
+        return ""
     }
 
+    @discardableResult
     class func delete(_ key: String) -> Bool {
         let tag = (prefix + key).data(using: .utf8)!
         
@@ -56,6 +63,7 @@ class Keychain {
         return status == noErr
     }
 
+    @discardableResult
     class func clear() -> Bool {
         let query = [kSecClass as String: kSecClassGenericPassword]
         let status: OSStatus = SecItemDelete(query as CFDictionary)
