@@ -887,7 +887,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdh-W9-W1l">
-                                                            <rect key="frame" x="18" y="393" width="244" height="29"/>
+                                                            <rect key="frame" x="18" y="393" width="120" height="29"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Accounts" id="CaK-VH-LFA">
                                                                 <font key="font" metaFont="system" size="24"/>
@@ -896,7 +896,7 @@
                                                             </textFieldCell>
                                                         </textField>
                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kfa-iQ-l6o">
-                                                            <rect key="frame" x="421" y="393" width="244" height="29"/>
+                                                            <rect key="frame" x="570" y="393" width="95" height="29"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Assets" id="Oj6-S8-lWn">
                                                                 <font key="font" metaFont="system" size="24"/>
@@ -1097,6 +1097,28 @@
                                                                 <action selector="onTabLedger:" target="XfG-lQ-9wD" id="HPk-gB-qxR"/>
                                                             </connections>
                                                         </button>
+                                                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9dM-sr-mdg">
+                                                            <rect key="frame" x="553" y="392" width="32" height="32"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="refresh" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Sw0-Dt-htd">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="onAssetsRefresh:" target="XfG-lQ-9wD" id="h5l-Z4-wqE"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pGO-l6-Y6f">
+                                                            <rect key="frame" x="132" y="392" width="32" height="32"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="refresh" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="anl-2f-DMm">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="onAccountsRefresh:" target="XfG-lQ-9wD" id="wxc-vw-0vo"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                 </customView>
                                             </subviews>
@@ -1183,7 +1205,7 @@
                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPK-5O-jmo">
                                                             <rect key="frame" x="51" y="363" width="582" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Enter a name to identify your account like Cash, Savings, Vault, Donations, Busines, etc." id="TB7-ab-Mbx">
+                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Enter a name to identify your account like Cash, Savings, Vault, Donations, Business, etc." id="TB7-ab-Mbx">
                                                                 <font key="font" metaFont="system"/>
                                                                 <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -1466,7 +1488,7 @@
                                                                             </subviews>
                                                                         </clipView>
                                                                         <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="3p4-H9-lK1">
-                                                                            <rect key="frame" x="1" y="401" width="681" height="16"/>
+                                                                            <rect key="frame" x="1" y="7" width="0.0" height="16"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                         </scroller>
                                                                         <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="gz3-PT-4YI">
@@ -1491,7 +1513,7 @@
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         <clipView key="contentView" ambiguous="YES" id="z8z-JK-OZL">
                                                                             <rect key="frame" x="1" y="0.0" width="681" height="402"/>
-                                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                            <autoresizingMask key="autoresizingMask"/>
                                                                             <subviews>
                                                                                 <tableView identifier="tableOperations" verticalHuggingPriority="750" allowsExpansionToolTips="YES" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="Prn-pd-cLE" viewBased="YES" id="hM7-UJ-xyL">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="681" height="379"/>
@@ -2464,6 +2486,17 @@
                                                         </tabViewItem>
                                                     </tabViewItems>
                                                 </tabView>
+                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6ve-8Z-Hgc">
+                                                    <rect key="frame" x="0.0" y="409" width="83" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <buttonCell key="cell" type="inline" title="Refresh" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="XA4-ah-JO6">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="smallSystemBold"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="onLedgerRefresh:" target="XfG-lQ-9wD" id="Gb5-Bk-lSw"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </view>
                                     </tabViewItem>
@@ -2543,6 +2576,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="refresh" width="32" height="32"/>
         <image name="stellar" width="300" height="168"/>
     </resources>
 </document>

@@ -82,6 +82,33 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
         tabLedger.selectTabViewItem(at: sender.tag)  // Selected tab
     }
     
+    
+    @IBAction func onAccountsRefresh(_ sender: Any) {
+        loadAccounts()
+        loadAssets(0)
+    }
+    
+    @IBAction func onAssetsRefresh(_ sender: Any) {
+        if selectedAccount < 0 || selectedAccount > accountsController.list.count-1 {
+            return
+        }
+        loadAssets(selectedAccount)
+    }
+    
+    @IBAction func onLedgerRefresh(_ sender: Any) {
+        guard let tab = tabLedger.selectedTabViewItem else { return }
+        let index = tabLedger.indexOfTabViewItem(tab)
+        
+        switch index {
+        case 0: loadPayments(refresh: true); break
+        case 1: loadOperations(refresh: true); break
+        case 2: loadTransactions(refresh: true); break
+        case 3: loadEffects(refresh: true); break
+        case 4: loadOffers(refresh: true); break
+        default: break
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         main()
@@ -116,13 +143,20 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
     
     func loadAssets(_ selected: Int) {
         if selected < 0 || selected >= accountsController.list.count { return }
+        selectedAccount = selected
         assetsLoading()
         let row = accountsController.list[selected]
         let net = row.net=="Test" ? StellarSDK.Horizon.Network.test : StellarSDK.Horizon.Network.live
         let account = StellarSDK.Account(row.key, net)
         account.getBalances { balances in
-            // TODO: if not balances, account not found
             var assets: [AssetData] = []
+            if balances.count < 1 {
+                DispatchQueue.main.async {
+                    self.showAssets(assets)
+                    self.showStatus("Assets not found")
+                    return
+                }
+            }
             for balance in balances {
                 print(balance.assetCode, balance.balance, balance.assetType)
                 let asset = AssetData(symbol: balance.assetCode, issuer: balance.assetIssuer, amount: balance.balance)
@@ -135,61 +169,6 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
         }
     }
 
-    func loadPayments(refresh: Bool? = false) {
-        if selectedAccount < 0 || selectedAccount >= accountsController.list.count { return }
-        self.showStatus("Loading payments, please wait...")
-        let account = accountsController.list[selectedAccount]
-        if refresh! || paymentsController.list.count < 1 {
-            paymentsController.load(from: account) {
-                self.showStatus("Payments loaded")
-            }
-        }
-    }
-
-    func loadOperations(refresh: Bool? = false) {
-        if selectedAccount < 0 || selectedAccount >= accountsController.list.count { return }
-        self.showStatus("Loading operations, please wait...")
-        let account = accountsController.list[selectedAccount]
-        if refresh! || operationsController.list.count < 1 {
-            operationsController.load(from: account) {
-                self.showStatus("Operations loaded")
-            }
-        }
-    }
-
-    func loadTransactions(refresh: Bool? = false) {
-        if selectedAccount < 0 || selectedAccount >= accountsController.list.count { return }
-        self.showStatus("Loading transactions, please wait...")
-        let account = accountsController.list[selectedAccount]
-        if refresh! || transactionsController.list.count < 1 {
-            transactionsController.load(from: account) {
-                self.showStatus("Transactions loaded")
-            }
-        }
-    }
-    
-    func loadEffects(refresh: Bool? = false) {
-        if selectedAccount < 0 || selectedAccount >= accountsController.list.count { return }
-        self.showStatus("Loading effects, please wait...")
-        let account = accountsController.list[selectedAccount]
-        if refresh! || effectsController.list.count < 1 {
-            effectsController.load(from: account) {
-                self.showStatus("Effects loaded")
-            }
-        }
-    }
-    
-    func loadOffers(refresh: Bool? = false) {
-        if selectedAccount < 0 || selectedAccount >= accountsController.list.count { return }
-        self.showStatus("Loading offers, please wait...")
-        let account = accountsController.list[selectedAccount]
-        if refresh! || offersController.list.count < 1 {
-            offersController.load(from: account) {
-                self.showStatus("Offers loaded")
-            }
-        }
-    }
-    
     func assetsLoading() {
         showStatus("Loading assets, please wait...")
         var assets: [AssetData] = []

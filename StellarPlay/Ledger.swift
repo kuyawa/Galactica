@@ -11,7 +11,60 @@ import StellarSDK
 
 
 extension ViewController {
-
-    // TODO: All ledger tables
+    
+    func loadPayments(refresh: Bool? = false) {
+        if selectedAccount < 0 || selectedAccount >= accountsController.list.count { return }
+        self.showStatus("Loading payments, please wait...")
+        let account = accountsController.list[selectedAccount]
+        if refresh! || paymentsController.list.count < 1 {
+            paymentsController.load(from: account) {
+                self.showStatus("Payments loaded")
+            }
+        }
+    }
+    
+    func loadOperations(refresh: Bool? = false) {
+        if selectedAccount < 0 || selectedAccount >= accountsController.list.count { return }
+        self.showStatus("Loading operations, please wait...")
+        let account = accountsController.list[selectedAccount]
+        if refresh! || operationsController.list.count < 1 {
+            operationsController.load(from: account) {
+                self.showStatus("Operations loaded")
+            }
+        }
+    }
+    
+    func loadTransactions(refresh: Bool? = false) {
+        if selectedAccount < 0 || selectedAccount >= accountsController.list.count { return }
+        self.showStatus("Loading transactions, please wait...")
+        let account = accountsController.list[selectedAccount]
+        if refresh! || transactionsController.list.count < 1 {
+            transactionsController.load(from: account) {
+                self.showStatus("Transactions loaded")
+            }
+        }
+    }
+    
+    func loadEffects(refresh: Bool? = false) {
+        if selectedAccount < 0 || selectedAccount >= accountsController.list.count { return }
+        self.showStatus("Loading effects, please wait...")
+        let account = accountsController.list[selectedAccount]
+        if refresh! || effectsController.list.count < 1 {
+            effectsController.load(from: account) {
+                self.showStatus("Effects loaded")
+            }
+        }
+    }
+    
+    func loadOffers(refresh: Bool? = false) {
+        if selectedAccount < 0 || selectedAccount >= accountsController.list.count { return }
+        self.showStatus("Loading offers, please wait...")
+        let account = accountsController.list[selectedAccount]
+        if refresh! || offersController.list.count < 1 {
+            offersController.load(from: account) {
+                self.showStatus("Offers loaded")
+            }
+        }
+    }
     
 }

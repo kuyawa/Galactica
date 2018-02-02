@@ -1,18 +1,18 @@
 TODO:
 
-- APPICON!!!
 - On account selected set refresh ledger to true
-- Cache balances, add refresh button
-- Status bar at bottom for info and errors
-- refresh button, cache results
-- Save address to userdefaults and keychain
-- Account Icons: cash:note savings:piggy vault:vault business:cashier donations:hat
-- Finish basic StellarSDK
-- Create account generator and friendbot funder
-- Vanity generator
+- Cache balances
+- Cache results on ledger
+- Finish basic StellarSDK for submitting
+? Vanity generator
+? Account Icons: cash:note savings:piggy vault:vault business:cashier donations:hat
 
 DONE:
 
+x refresh button on ledger
+x Save address to userdefaults and keychain
+x Create account generator and friendbot funder
+x Status bar at bottom for info and errors
 x Resize all views
 x Ledger: List all operations
 x alternate rows
@@ -21,6 +21,7 @@ x Show balances
 x Load assets from horizon
 x Save secret key in Keychain
 x On init load keypair from secret in keychian
+x Appicon
 
 Version 2
 
