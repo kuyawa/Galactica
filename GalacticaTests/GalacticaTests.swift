@@ -1,13 +1,13 @@
 //
-//  StellarPlayTests.swift
-//  StellarPlayTests
+//  GalacticaTests.swift
+//  GalacticaTests
 //
 //  Created by Laptop on 1/23/18.
 //  Copyright © 2018 Armonia. All rights reserved.
 //
 
 import XCTest
-@testable import Galactica
+//@testable import Galactica
 @testable import StellarSDK
 @testable import CryptoSwift
 
@@ -40,17 +40,17 @@ class GalacticaTests: XCTestCase {
         //    print("Raw:", response.text)
         //}
     }
-    
+/*
     func testKeychain() {
         print("\n---- \(#function)\n")
-        let pair = KeyPair.random()
         let tag  = "account-00"
-        let val  = Data(pair.secretKey)
-        let ok   = Keychain.save(tag, val)
+        let account  = StellarSDK.Account.random()
+        let val = account.secretKey
+        let ok = Keychain.save(tag, val)
         print("OK", ok)
         XCTAssertTrue(ok, "Error saving to the keychain")
     }
-    
+*/    
     func testHorizonTest() {
         print("\n---- \(#function)\n")
         //let keyPair   = KeyPair.random()

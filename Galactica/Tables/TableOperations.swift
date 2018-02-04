@@ -1,6 +1,6 @@
 //
 //  TableOperations.swift
-//  StellarPlay
+//  Galactica
 //
 //  Created by Laptop on 2/1/18.
 //  Copyright © 2018 Armonia. All rights reserved.

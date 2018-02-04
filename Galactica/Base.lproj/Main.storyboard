@@ -13,11 +13,11 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="StellarPlay" id="1Xt-HY-uBw">
+                            <menuItem title="Galactica" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="StellarPlay" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="Galactica" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
-                                        <menuItem title="About StellarPlay" id="5kV-Vb-QxS">
+                                        <menuItem title="About Galactica" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
@@ -31,7 +31,7 @@
                                             <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
-                                        <menuItem title="Hide StellarPlay" keyEquivalent="h" id="Olw-nP-bQN">
+                                        <menuItem title="Hide Galactica" keyEquivalent="h" id="Olw-nP-bQN">
                                             <connections>
                                                 <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
                                             </connections>
@@ -49,7 +49,7 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                                        <menuItem title="Quit StellarPlay" keyEquivalent="q" id="4sb-4s-VLi">
+                                        <menuItem title="Quit Galactica" keyEquivalent="q" id="4sb-4s-VLi">
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
                                             </connections>
@@ -642,7 +642,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                                     <items>
-                                        <menuItem title="StellarPlay Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                        <menuItem title="Galactica Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
                                                 <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
                                             </connections>
@@ -656,7 +656,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="StellarPlay" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Galactica" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
@@ -682,7 +682,7 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="StellarPlay" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Galactica" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="900" height="500"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -699,7 +699,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="stellar" id="kfl-AF-IOC"/>
                                         </imageView>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6If-U1-tTQ" customClass="TextClick" customModule="StellarPlay" customModuleProvider="target">
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6If-U1-tTQ" customClass="TextClick" customModule="Galactica" customModuleProvider="target">
                                             <rect key="frame" x="18" y="376" width="150" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Create new account" id="HG7-Pe-4h6">
@@ -711,7 +711,7 @@
                                                 <action selector="onTabGenerate:" target="XfG-lQ-9wD" id="u9L-Kn-0an"/>
                                             </connections>
                                         </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="le9-Aa-b1A" customClass="TextClick" customModule="StellarPlay" customModuleProvider="target">
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="le9-Aa-b1A" customClass="TextClick" customModule="Galactica" customModuleProvider="target">
                                             <rect key="frame" x="19" y="401" width="150" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="All accounts" id="PAR-jB-F0u">
@@ -724,7 +724,7 @@
                                                 <outlet property="delegate" destination="XfG-lQ-9wD" id="OIY-MN-jZs"/>
                                             </connections>
                                         </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7w8-tI-sPu" customClass="TextClick" customModule="StellarPlay" customModuleProvider="target">
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7w8-tI-sPu" customClass="TextClick" customModule="Galactica" customModuleProvider="target">
                                             <rect key="frame" x="19" y="317" width="150" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="View Operations" id="1ce-uH-27P">
@@ -736,7 +736,7 @@
                                                 <action selector="onTabLedger:" target="XfG-lQ-9wD" id="7mP-0W-UTQ"/>
                                             </connections>
                                         </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6j-wn-tON" customClass="TextClick" customModule="StellarPlay" customModuleProvider="target">
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6j-wn-tON" customClass="TextClick" customModule="Galactica" customModuleProvider="target">
                                             <rect key="frame" x="19" y="292" width="120" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="• Payments" id="7aC-9f-Kck">
@@ -748,7 +748,7 @@
                                                 <action selector="onSelectLedger:" target="XfG-lQ-9wD" id="hGV-dk-OlB"/>
                                             </connections>
                                         </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" tag="1" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKC-Je-cws" customClass="TextClick" customModule="StellarPlay" customModuleProvider="target">
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" tag="1" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKC-Je-cws" customClass="TextClick" customModule="Galactica" customModuleProvider="target">
                                             <rect key="frame" x="19" y="267" width="120" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="• Operations" id="GST-wB-eiN">
@@ -760,7 +760,7 @@
                                                 <action selector="onSelectLedger:" target="XfG-lQ-9wD" id="mYf-n5-vun"/>
                                             </connections>
                                         </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" tag="2" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fXy-Wi-YYj" customClass="TextClick" customModule="StellarPlay" customModuleProvider="target">
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" tag="2" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fXy-Wi-YYj" customClass="TextClick" customModule="Galactica" customModuleProvider="target">
                                             <rect key="frame" x="19" y="242" width="120" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="• Transactions" id="Sf0-h3-1YT">
@@ -772,7 +772,7 @@
                                                 <action selector="onSelectLedger:" target="XfG-lQ-9wD" id="lTl-XT-FBp"/>
                                             </connections>
                                         </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" tag="3" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTP-Mc-xwi" customClass="TextClick" customModule="StellarPlay" customModuleProvider="target">
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" tag="3" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTP-Mc-xwi" customClass="TextClick" customModule="Galactica" customModuleProvider="target">
                                             <rect key="frame" x="19" y="217" width="120" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="• Effects" id="sxB-zX-fzv">
@@ -784,7 +784,7 @@
                                                 <action selector="onSelectLedger:" target="XfG-lQ-9wD" id="GRe-4t-R2A"/>
                                             </connections>
                                         </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" tag="4" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gc5-vy-S0u" customClass="TextClick" customModule="StellarPlay" customModuleProvider="target">
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" tag="4" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gc5-vy-S0u" customClass="TextClick" customModule="Galactica" customModuleProvider="target">
                                             <rect key="frame" x="19" y="192" width="120" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="• Offers" id="zkI-k4-CxO">
@@ -931,7 +931,7 @@
                                                                                 </textFieldCell>
                                                                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                                 <prototypeCellViews>
-                                                                                    <tableCellView identifier="accountCell" id="MXu-hg-5im" customClass="AccountCellView" customModule="StellarPlay" customModuleProvider="target">
+                                                                                    <tableCellView identifier="accountCell" id="MXu-hg-5im" customClass="AccountCellView" customModule="Galactica" customModuleProvider="target">
                                                                                         <rect key="frame" x="1" y="1" width="305" height="60"/>
                                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                         <subviews>
@@ -1011,7 +1011,7 @@
                                                                                 </textFieldCell>
                                                                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                                 <prototypeCellViews>
-                                                                                    <tableCellView identifier="assetCell" id="lCo-GH-7wf" customClass="AssetCellView" customModule="StellarPlay" customModuleProvider="target">
+                                                                                    <tableCellView identifier="assetCell" id="lCo-GH-7wf" customClass="AssetCellView" customModule="Galactica" customModuleProvider="target">
                                                                                         <rect key="frame" x="1" y="1" width="305" height="60"/>
                                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                         <subviews>

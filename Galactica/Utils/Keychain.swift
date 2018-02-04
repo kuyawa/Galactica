@@ -1,6 +1,6 @@
 //
 //  Keychain.swift
-//  StellarPlay
+//  Galactica
 //
 //  Created by Laptop on 1/29/18.
 //  Copyright © 2018 Armonia. All rights reserved.
@@ -10,7 +10,7 @@ import Foundation
 import Security
 
 class Keychain {
-    static let prefix = "stellarplay.address."
+    static let prefix = "galactica.address."
 
     // save("account-01", secretKey)
     @discardableResult

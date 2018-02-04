@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  StellarPlay
+//  Galactica
 //
 //  Created by Laptop on 1/23/18.
 //  Copyright © 2018 Armonia. All rights reserved.

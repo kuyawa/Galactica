@@ -20,17 +20,15 @@
 		F4A9BDCF201829EC00742C73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4A9BDCE201829EC00742C73 /* Assets.xcassets */; };
 		F4A9BDD2201829EC00742C73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4A9BDD0201829EC00742C73 /* Main.storyboard */; };
 		F4A9BDDD201829EC00742C73 /* GalacticaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A9BDDC201829EC00742C73 /* GalacticaTests.swift */; };
-		F4A9BDEE20182CBE00742C73 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A9BDEC20182CBE00742C73 /* CryptoSwift.framework */; };
-		F4A9BDF120182CEF00742C73 /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4A9BDEC20182CBE00742C73 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F4B6B0D82022943500C8C4F2 /* TablePayments.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B6B0D72022943500C8C4F2 /* TablePayments.swift */; };
 		F4B6B0DD2022AFC100C8C4F2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B6B0DC2022AFC100C8C4F2 /* Utils.swift */; };
 		F4B78A74202348B0006E7BFC /* TableOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B78A73202348B0006E7BFC /* TableOperations.swift */; };
 		F4B78A7720235767006E7BFC /* TableTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B78A7620235767006E7BFC /* TableTransactions.swift */; };
 		F4B78A7920235DFD006E7BFC /* TableEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B78A7820235DFD006E7BFC /* TableEffects.swift */; };
 		F4B78A7B20236400006E7BFC /* TableOffers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B78A7A20236400006E7BFC /* TableOffers.swift */; };
-		F4D03B98201998500024797E /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A9BDEC20182CBE00742C73 /* CryptoSwift.framework */; };
-		F4D03B9D20199DD00024797E /* StellarSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D03B9C20199DD00024797E /* StellarSDK.framework */; };
-		F4D03B9F20199DDE0024797E /* StellarSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4D03B9C20199DD00024797E /* StellarSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F4EF2C9020278BE300750B4B /* StellarSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D03B9C20199DD00024797E /* StellarSDK.framework */; };
+		F4EF2C9420278D5000750B4B /* StellarSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D03B9C20199DD00024797E /* StellarSDK.framework */; };
+		F4EF2C9520278D5000750B4B /* StellarSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4D03B9C20199DD00024797E /* StellarSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,14 +42,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		F4A9BDF220182CEF00742C73 /* Embed Frameworks */ = {
+		F4EF2C9320278D4800750B4B /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F4A9BDF120182CEF00742C73 /* CryptoSwift.framework in Embed Frameworks */,
-				F4D03B9F20199DDE0024797E /* StellarSDK.framework in Embed Frameworks */,
+				F4EF2C9520278D5000750B4B /* StellarSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,16 +64,14 @@
 		F478A4A02022019D0094A7F7 /* TableAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableAssets.swift; sourceTree = "<group>"; };
 		F494378820224A93006CC8DB /* Accounts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Accounts.swift; sourceTree = "<group>"; };
 		F494378A20224D93006CC8DB /* Ledger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ledger.swift; sourceTree = "<group>"; };
-		F4A9BDC7201829EC00742C73 /* StellarPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StellarPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4A9BDC7201829EC00742C73 /* Galactica.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Galactica.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4A9BDCA201829EC00742C73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		F4A9BDCC201829EC00742C73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		F4A9BDCE201829EC00742C73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4A9BDD1201829EC00742C73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F4A9BDD3201829EC00742C73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F4A9BDD8201829EC00742C73 /* StellarPlayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StellarPlayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4A9BDD8201829EC00742C73 /* GalacticaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GalacticaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4A9BDDC201829EC00742C73 /* GalacticaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalacticaTests.swift; sourceTree = "<group>"; };
-		F4A9BDDE201829EC00742C73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F4A9BDEC20182CBE00742C73 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = "<group>"; };
 		F4A9BDF5201830A200742C73 /* ToDo.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ToDo.txt; sourceTree = "<group>"; };
 		F4B6B0D72022943500C8C4F2 /* TablePayments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TablePayments.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		F4B6B0DC2022AFC100C8C4F2 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -85,6 +80,7 @@
 		F4B78A7820235DFD006E7BFC /* TableEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableEffects.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		F4B78A7A20236400006E7BFC /* TableOffers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableOffers.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		F4D03B9C20199DD00024797E /* StellarSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = StellarSDK.framework; sourceTree = "<group>"; };
+		F4EF2C862027865600750B4B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,8 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4A9BDEE20182CBE00742C73 /* CryptoSwift.framework in Frameworks */,
-				F4D03B9D20199DD00024797E /* StellarSDK.framework in Frameworks */,
+				F4EF2C9420278D5000750B4B /* StellarSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,7 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4D03B98201998500024797E /* CryptoSwift.framework in Frameworks */,
+				F4EF2C9020278BE300750B4B /* StellarSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,8 +143,8 @@
 		F4A9BDC8201829EC00742C73 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F4A9BDC7201829EC00742C73 /* StellarPlay.app */,
-				F4A9BDD8201829EC00742C73 /* StellarPlayTests.xctest */,
+				F4A9BDC7201829EC00742C73 /* Galactica.app */,
+				F4A9BDD8201829EC00742C73 /* GalacticaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -173,7 +168,7 @@
 		F4A9BDDB201829EC00742C73 /* GalacticaTests */ = {
 			isa = PBXGroup;
 			children = (
-				F4A9BDDE201829EC00742C73 /* Info.plist */,
+				F4EF2C862027865600750B4B /* Info.plist */,
 				F4A9BDDC201829EC00742C73 /* GalacticaTests.swift */,
 			);
 			path = GalacticaTests;
@@ -182,7 +177,6 @@
 		F4A9BDEB20182CBE00742C73 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F4A9BDEC20182CBE00742C73 /* CryptoSwift.framework */,
 				F4D03B9C20199DD00024797E /* StellarSDK.framework */,
 			);
 			path = Frameworks;
@@ -191,27 +185,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F4A9BDC6201829EC00742C73 /* StellarPlay */ = {
+		F4A9BDC6201829EC00742C73 /* Galactica */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F4A9BDE1201829EC00742C73 /* Build configuration list for PBXNativeTarget "StellarPlay" */;
+			buildConfigurationList = F4A9BDE1201829EC00742C73 /* Build configuration list for PBXNativeTarget "Galactica" */;
 			buildPhases = (
 				F4A9BDC3201829EC00742C73 /* Sources */,
 				F4A9BDC4201829EC00742C73 /* Frameworks */,
 				F4A9BDC5201829EC00742C73 /* Resources */,
-				F4A9BDF220182CEF00742C73 /* Embed Frameworks */,
+				F4EF2C9320278D4800750B4B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = StellarPlay;
+			name = Galactica;
 			productName = StellarPlay;
-			productReference = F4A9BDC7201829EC00742C73 /* StellarPlay.app */;
+			productReference = F4A9BDC7201829EC00742C73 /* Galactica.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F4A9BDD7201829EC00742C73 /* StellarPlayTests */ = {
+		F4A9BDD7201829EC00742C73 /* GalacticaTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F4A9BDE4201829EC00742C73 /* Build configuration list for PBXNativeTarget "StellarPlayTests" */;
+			buildConfigurationList = F4A9BDE4201829EC00742C73 /* Build configuration list for PBXNativeTarget "GalacticaTests" */;
 			buildPhases = (
 				F4A9BDD4201829EC00742C73 /* Sources */,
 				F4A9BDD5201829EC00742C73 /* Frameworks */,
@@ -222,9 +216,9 @@
 			dependencies = (
 				F4A9BDDA201829EC00742C73 /* PBXTargetDependency */,
 			);
-			name = StellarPlayTests;
+			name = GalacticaTests;
 			productName = StellarPlayTests;
-			productReference = F4A9BDD8201829EC00742C73 /* StellarPlayTests.xctest */;
+			productReference = F4A9BDD8201829EC00742C73 /* GalacticaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -246,7 +240,6 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = W7PMV9XFGM;
 						ProvisioningStyle = Automatic;
-						TestTargetID = F4A9BDC6201829EC00742C73;
 					};
 				};
 			};
@@ -263,8 +256,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F4A9BDC6201829EC00742C73 /* StellarPlay */,
-				F4A9BDD7201829EC00742C73 /* StellarPlayTests */,
+				F4A9BDC6201829EC00742C73 /* Galactica */,
+				F4A9BDD7201829EC00742C73 /* GalacticaTests */,
 			);
 		};
 /* End PBXProject section */
@@ -325,7 +318,7 @@
 /* Begin PBXTargetDependency section */
 		F4A9BDDA201829EC00742C73 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F4A9BDC6201829EC00742C73 /* StellarPlay */;
+			target = F4A9BDC6201829EC00742C73 /* Galactica */;
 			targetProxy = F4A9BDD9201829EC00742C73 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -444,9 +437,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
 				);
-				INFOPLIST_FILE = StellarPlay/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Galactica/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Armonia.StellarPlay;
+				PRODUCT_BUNDLE_IDENTIFIER = Armonia.Galactica;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -462,9 +455,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
 				);
-				INFOPLIST_FILE = StellarPlay/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Galactica/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Armonia.StellarPlay;
+				PRODUCT_BUNDLE_IDENTIFIER = Armonia.Galactica;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -474,21 +467,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = W7PMV9XFGM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
 				);
-				INFOPLIST_FILE = StellarPlayTests/Info.plist;
+				INFOPLIST_FILE = GalacticaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Armonia.StellarPlayTests;
+				PRODUCT_BUNDLE_IDENTIFIER = Armonia.GalacticaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StellarPlay.app/Contents/MacOS/StellarPlay";
 			};
 			name = Debug;
 		};
@@ -496,21 +487,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = W7PMV9XFGM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
 				);
-				INFOPLIST_FILE = StellarPlayTests/Info.plist;
+				INFOPLIST_FILE = GalacticaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Armonia.StellarPlayTests;
+				PRODUCT_BUNDLE_IDENTIFIER = Armonia.GalacticaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StellarPlay.app/Contents/MacOS/StellarPlay";
 			};
 			name = Release;
 		};
@@ -526,7 +515,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F4A9BDE1201829EC00742C73 /* Build configuration list for PBXNativeTarget "StellarPlay" */ = {
+		F4A9BDE1201829EC00742C73 /* Build configuration list for PBXNativeTarget "Galactica" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F4A9BDE2201829EC00742C73 /* Debug */,
@@ -535,7 +524,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F4A9BDE4201829EC00742C73 /* Build configuration list for PBXNativeTarget "StellarPlayTests" */ = {
+		F4A9BDE4201829EC00742C73 /* Build configuration list for PBXNativeTarget "GalacticaTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F4A9BDE5201829EC00742C73 /* Debug */,
