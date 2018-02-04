@@ -17,8 +17,8 @@ extension ViewController {
         self.showStatus("Loading payments, please wait...")
         let account = accountsController.list[selectedAccount]
         if refresh! || paymentsController.list.count < 1 {
-            paymentsController.load(from: account) {
-                self.showStatus("Payments loaded")
+            paymentsController.load(from: account) { message in
+                self.showStatus(message)
             }
         }
     }
@@ -28,8 +28,8 @@ extension ViewController {
         self.showStatus("Loading operations, please wait...")
         let account = accountsController.list[selectedAccount]
         if refresh! || operationsController.list.count < 1 {
-            operationsController.load(from: account) {
-                self.showStatus("Operations loaded")
+            operationsController.load(from: account) { message in
+                self.showStatus(message)
             }
         }
     }
@@ -39,8 +39,8 @@ extension ViewController {
         self.showStatus("Loading transactions, please wait...")
         let account = accountsController.list[selectedAccount]
         if refresh! || transactionsController.list.count < 1 {
-            transactionsController.load(from: account) {
-                self.showStatus("Transactions loaded")
+            transactionsController.load(from: account) { message in
+                self.showStatus(message)
             }
         }
     }
@@ -50,8 +50,8 @@ extension ViewController {
         self.showStatus("Loading effects, please wait...")
         let account = accountsController.list[selectedAccount]
         if refresh! || effectsController.list.count < 1 {
-            effectsController.load(from: account) {
-                self.showStatus("Effects loaded")
+            effectsController.load(from: account) { message in
+                self.showStatus(message)
             }
         }
     }
@@ -61,8 +61,8 @@ extension ViewController {
         self.showStatus("Loading offers, please wait...")
         let account = accountsController.list[selectedAccount]
         if refresh! || offersController.list.count < 1 {
-            offersController.load(from: account) {
-                self.showStatus("Offers loaded")
+            offersController.load(from: account) { message in
+                self.showStatus(message)
             }
         }
     }

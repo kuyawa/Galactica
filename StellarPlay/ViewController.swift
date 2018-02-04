@@ -72,7 +72,9 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
             let num = tabLedger.indexOfTabViewItem(tab)
             if num < 1 && paymentsController.list.count < 1 {
                 let account = accountsController.list[selectedAccount]
-                paymentsController.load(from: account) {}
+                paymentsController.load(from: account) { message in
+                    self.showStatus("Payments loaded")
+                }
             }
         }
     }

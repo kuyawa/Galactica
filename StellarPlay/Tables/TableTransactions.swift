@@ -16,26 +16,25 @@ class TableTransactions: NSObject, NSTableViewDataSource, NSTableViewDelegate {
     var tableSelection: (_ selected: Int) -> () = { index in }
     var list: [StellarSDK.TransactionResponse] = []
     var selected = 0
+    var address  = ""
     
     func load(from: Storage.AccountData, onReady: @escaping Completion) {
-        let address = from.key
+        address = from.key
         let network: StellarSDK.Horizon.Network = (from.net == "Test" ? .test : .live)
         let account = StellarSDK.Account(address, network)
         
         account.getTransactions(cursor: nil, limit: 20, order: .desc) { response in
             if response.error != nil {
-                // TODO: Nice message
-                print(response.error!.text)
+                onReady(response.error!.text)
                 return
             }
-            
             DispatchQueue.main.async {
                 self.list = response.records
                 self.tableView?.target     = self
                 self.tableView?.delegate   = self
                 self.tableView?.dataSource = self
                 self.tableView?.reloadData()
-                onReady()
+                onReady("Transactions loaded")
             }
         }
     }

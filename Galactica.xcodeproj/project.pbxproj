@@ -78,7 +78,7 @@
 		F4A9BDDE201829EC00742C73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4A9BDEC20182CBE00742C73 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = "<group>"; };
 		F4A9BDF5201830A200742C73 /* ToDo.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ToDo.txt; sourceTree = "<group>"; };
-		F4B6B0D72022943500C8C4F2 /* TablePayments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TablePayments.swift; sourceTree = "<group>"; };
+		F4B6B0D72022943500C8C4F2 /* TablePayments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TablePayments.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		F4B6B0DC2022AFC100C8C4F2 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		F4B78A73202348B0006E7BFC /* TableOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableOperations.swift; sourceTree = "<group>"; };
 		F4B78A7620235767006E7BFC /* TableTransactions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableTransactions.swift; sourceTree = "<group>"; };
@@ -250,7 +250,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F4A9BDC2201829EC00742C73 /* Build configuration list for PBXProject "StellarPlay" */;
+			buildConfigurationList = F4A9BDC2201829EC00742C73 /* Build configuration list for PBXProject "Galactica" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -517,7 +517,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F4A9BDC2201829EC00742C73 /* Build configuration list for PBXProject "StellarPlay" */ = {
+		F4A9BDC2201829EC00742C73 /* Build configuration list for PBXProject "Galactica" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F4A9BDDF201829EC00742C73 /* Debug */,

@@ -9,7 +9,7 @@
 import Foundation
 import Cocoa
 
-typealias Completion = () -> ()
+typealias Completion = (_ message: String) -> ()
 
 extension String {
     

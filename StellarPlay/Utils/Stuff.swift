@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CryptoSwift
 
 class Stuff {
     
@@ -19,6 +20,8 @@ class Stuff {
         //   accounts: n
         //   account-01: publicKey:name
         //   account-02: publicKey:name
+        
+        //let sig = CryptoSwift.sign???
         
         print("\n---- \(#function)\n")
         //let key = "G123456"

@@ -16,25 +16,25 @@ class TablePayments: NSObject, NSTableViewDataSource, NSTableViewDelegate {
     var tableSelection: (_ selected: Int) -> () = { index in }
     var list: [StellarSDK.PaymentResponse] = []
     var selected = 0
+    var address  = ""
     
     func load(from: Storage.AccountData, onReady: @escaping Completion) {
-        let address = from.key
+        address = from.key
         let network: StellarSDK.Horizon.Network = (from.net == "Test" ? .test : .live)
         let account = StellarSDK.Account(address, network)
         
-        account.getPayments(cursor: nil, limit: 20, order: .desc) { payments in
-            if payments.error != nil {
-                // TODO: Nice message
-                print(payments.error!.text)
+        account.getPayments(cursor: nil, limit: 20, order: .desc) { response in
+            if response.error != nil {
+                onReady(response.error!.text)
                 return
             }
             DispatchQueue.main.async {
-                self.list = payments.records
+                self.list = response.records
                 self.tableView?.target     = self
                 self.tableView?.delegate   = self
                 self.tableView?.dataSource = self
                 self.tableView?.reloadData()
-                onReady()
+                onReady("Payments loaded")
             }
         }
     }
@@ -58,15 +58,18 @@ class TablePayments: NSObject, NSTableViewDataSource, NSTableViewDelegate {
         case "textFrom"   : text = item.from ?? "?"; break
         case "textTo"     : text = item.to   ?? "?"; break
         case "textAmount" : text = item.amount?.money ?? "?"; break
-        case "textAsset"  : text = (item.assetType == "native" ? "XLM" : item.assetCode) ?? "?"; break
+        case "textAsset"  : text = (item.assetType == "native" ? "XLM" : item.assetCode) ?? "?"
+                            if item.typeInt == 0 { text = "XLM" } // Funding
+                            break
         default           : text = "?"
         }
 
+        
         if let cell = tableView.make(withIdentifier: cellId, owner: self) as? NSTableCellView {
             cell.textField?.stringValue = text
 
             if cellId == "textAmount" {
-                if item.typeInt == 1 {
+                if item.typeInt == 1 && item.sourceAccount == address {
                     cell.textField?.textColor = NSColor(hex: 0x800000)
                 } else {
                     cell.textField?.textColor = NSColor(hex: 0x008800)

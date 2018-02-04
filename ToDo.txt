@@ -3,6 +3,7 @@ TODO:
 - On account selected set refresh ledger to true
 - Cache balances
 - Cache results on ledger
+- Add manage data to main menu
 - Finish basic StellarSDK for submitting
 ? Vanity generator
 ? Account Icons: cash:note savings:piggy vault:vault business:cashier donations:hat

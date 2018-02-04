@@ -883,11 +883,11 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fJW-aw-T7e">
-                                                    <rect key="frame" x="0.0" y="0.0" width="689" height="436"/>
+                                                    <rect key="frame" x="-3" y="6" width="689" height="424"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdh-W9-W1l">
-                                                            <rect key="frame" x="18" y="393" width="120" height="29"/>
+                                                            <rect key="frame" x="18" y="381" width="120" height="29"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Accounts" id="CaK-VH-LFA">
                                                                 <font key="font" metaFont="system" size="24"/>
@@ -896,7 +896,7 @@
                                                             </textFieldCell>
                                                         </textField>
                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kfa-iQ-l6o">
-                                                            <rect key="frame" x="570" y="393" width="95" height="29"/>
+                                                            <rect key="frame" x="570" y="381" width="95" height="29"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Assets" id="Oj6-S8-lWn">
                                                                 <font key="font" metaFont="system" size="24"/>
@@ -905,14 +905,14 @@
                                                             </textFieldCell>
                                                         </textField>
                                                         <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="62" horizontalPageScroll="10" verticalLineScroll="62" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nn1-tJ-jg5">
-                                                            <rect key="frame" x="20" y="56" width="310" height="329"/>
+                                                            <rect key="frame" x="20" y="56" width="310" height="317"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                                                             <clipView key="contentView" ambiguous="YES" id="GOP-7a-bHD">
-                                                                <rect key="frame" x="1" y="1" width="308" height="327"/>
+                                                                <rect key="frame" x="1" y="1" width="308" height="315"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <subviews>
                                                                     <tableView identifier="tableAccounts" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="60" viewBased="YES" id="WpN-Hw-uyF">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="308" height="327"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="308" height="315"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                         <size key="intercellSpacing" width="3" height="2"/>
                                                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -985,14 +985,14 @@
                                                             </scroller>
                                                         </scrollView>
                                                         <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="62" horizontalPageScroll="10" verticalLineScroll="62" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdn-Ny-I8a">
-                                                            <rect key="frame" x="353" y="56" width="310" height="329"/>
+                                                            <rect key="frame" x="353" y="56" width="310" height="317"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                                                             <clipView key="contentView" ambiguous="YES" id="KN0-ua-VOa">
-                                                                <rect key="frame" x="1" y="1" width="308" height="327"/>
+                                                                <rect key="frame" x="1" y="1" width="308" height="315"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <subviews>
                                                                     <tableView identifier="tableAssets" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="60" viewBased="YES" id="Sdc-Ua-7nJ">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="308" height="327"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="308" height="315"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                         <size key="intercellSpacing" width="3" height="2"/>
                                                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1098,7 +1098,7 @@
                                                             </connections>
                                                         </button>
                                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9dM-sr-mdg">
-                                                            <rect key="frame" x="553" y="392" width="32" height="32"/>
+                                                            <rect key="frame" x="557" y="382" width="24" height="24"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="refresh" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Sw0-Dt-htd">
                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -1109,7 +1109,7 @@
                                                             </connections>
                                                         </button>
                                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pGO-l6-Y6f">
-                                                            <rect key="frame" x="132" y="392" width="32" height="32"/>
+                                                            <rect key="frame" x="132" y="382" width="24" height="24"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="refresh" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="anl-2f-DMm">
                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
