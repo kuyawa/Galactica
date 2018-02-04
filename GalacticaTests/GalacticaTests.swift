@@ -7,11 +7,11 @@
 //
 
 import XCTest
-@testable import StellarPlay
+@testable import Galactica
 @testable import StellarSDK
 @testable import CryptoSwift
 
-class StellarPlayTests: XCTestCase {
+class GalacticaTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

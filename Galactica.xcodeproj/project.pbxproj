@@ -19,7 +19,7 @@
 		F4A9BDCD201829EC00742C73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A9BDCC201829EC00742C73 /* ViewController.swift */; };
 		F4A9BDCF201829EC00742C73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4A9BDCE201829EC00742C73 /* Assets.xcassets */; };
 		F4A9BDD2201829EC00742C73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4A9BDD0201829EC00742C73 /* Main.storyboard */; };
-		F4A9BDDD201829EC00742C73 /* StellarPlayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A9BDDC201829EC00742C73 /* StellarPlayTests.swift */; };
+		F4A9BDDD201829EC00742C73 /* GalacticaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A9BDDC201829EC00742C73 /* GalacticaTests.swift */; };
 		F4A9BDEE20182CBE00742C73 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A9BDEC20182CBE00742C73 /* CryptoSwift.framework */; };
 		F4A9BDF120182CEF00742C73 /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4A9BDEC20182CBE00742C73 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F4B6B0D82022943500C8C4F2 /* TablePayments.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B6B0D72022943500C8C4F2 /* TablePayments.swift */; };
@@ -74,7 +74,7 @@
 		F4A9BDD1201829EC00742C73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F4A9BDD3201829EC00742C73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4A9BDD8201829EC00742C73 /* StellarPlayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StellarPlayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4A9BDDC201829EC00742C73 /* StellarPlayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StellarPlayTests.swift; sourceTree = "<group>"; };
+		F4A9BDDC201829EC00742C73 /* GalacticaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalacticaTests.swift; sourceTree = "<group>"; };
 		F4A9BDDE201829EC00742C73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4A9BDEC20182CBE00742C73 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = "<group>"; };
 		F4A9BDF5201830A200742C73 /* ToDo.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ToDo.txt; sourceTree = "<group>"; };
@@ -138,8 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				F4A9BDF5201830A200742C73 /* ToDo.txt */,
-				F4A9BDC9201829EC00742C73 /* StellarPlay */,
-				F4A9BDDB201829EC00742C73 /* StellarPlayTests */,
+				F4A9BDC9201829EC00742C73 /* Galactica */,
+				F4A9BDDB201829EC00742C73 /* GalacticaTests */,
 				F4A9BDEB20182CBE00742C73 /* Frameworks */,
 				F4A9BDC8201829EC00742C73 /* Products */,
 			);
@@ -154,7 +154,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F4A9BDC9201829EC00742C73 /* StellarPlay */ = {
+		F4A9BDC9201829EC00742C73 /* Galactica */ = {
 			isa = PBXGroup;
 			children = (
 				F4A9BDD3201829EC00742C73 /* Info.plist */,
@@ -167,16 +167,16 @@
 				F478A4972021FF090094A7F7 /* Tables */,
 				F478A4902021FE660094A7F7 /* Utils */,
 			);
-			path = StellarPlay;
+			path = Galactica;
 			sourceTree = "<group>";
 		};
-		F4A9BDDB201829EC00742C73 /* StellarPlayTests */ = {
+		F4A9BDDB201829EC00742C73 /* GalacticaTests */ = {
 			isa = PBXGroup;
 			children = (
-				F4A9BDDC201829EC00742C73 /* StellarPlayTests.swift */,
 				F4A9BDDE201829EC00742C73 /* Info.plist */,
+				F4A9BDDC201829EC00742C73 /* GalacticaTests.swift */,
 			);
-			path = StellarPlayTests;
+			path = GalacticaTests;
 			sourceTree = "<group>";
 		};
 		F4A9BDEB20182CBE00742C73 /* Frameworks */ = {
@@ -316,7 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4A9BDDD201829EC00742C73 /* StellarPlayTests.swift in Sources */,
+				F4A9BDDD201829EC00742C73 /* GalacticaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
