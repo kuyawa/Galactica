@@ -11,7 +11,7 @@
 import XCTest
 //@testable import Galactica
 @testable import StellarSDK
-@testable import CryptoSwift
+//@testable import CryptoSwift
 
 class GalacticaTests: XCTestCase {
     

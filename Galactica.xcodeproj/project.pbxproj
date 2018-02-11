@@ -22,7 +22,6 @@
 		F40859CE202F3E97006DD5C1 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42201F4202E582B0027B7EA /* Cache.swift */; };
 		F40859CF202F3E9D006DD5C1 /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49D85EA202D01CE00B16463 /* QRCode.swift */; };
 		F40859D0202F3EA0006DD5C1 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F478A4922021FEA80094A7F7 /* Storage.swift */; };
-		F40859D1202F3EA3006DD5C1 /* Stuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = F478A49E2021FF530094A7F7 /* Stuff.swift */; };
 		F40859D2202F3EA6006DD5C1 /* TextChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42201F2202E54F80027B7EA /* TextChange.swift */; };
 		F40859D3202F3EA9006DD5C1 /* TextClick.swift in Sources */ = {isa = PBXBuildFile; fileRef = F478A4932021FEA80094A7F7 /* TextClick.swift */; };
 		F40859D4202F3EAB006DD5C1 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B6B0DC2022AFC100C8C4F2 /* Utils.swift */; };
@@ -32,7 +31,6 @@
 		F478A4952021FEA80094A7F7 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F478A4922021FEA80094A7F7 /* Storage.swift */; };
 		F478A4962021FEA80094A7F7 /* TextClick.swift in Sources */ = {isa = PBXBuildFile; fileRef = F478A4932021FEA80094A7F7 /* TextClick.swift */; };
 		F478A49D2021FF090094A7F7 /* TableAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F478A49A2021FF090094A7F7 /* TableAccounts.swift */; };
-		F478A49F2021FF530094A7F7 /* Stuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = F478A49E2021FF530094A7F7 /* Stuff.swift */; };
 		F478A4A12022019D0094A7F7 /* TableAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F478A4A02022019D0094A7F7 /* TableAssets.swift */; };
 		F494378920224A93006CC8DB /* Accounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F494378820224A93006CC8DB /* Accounts.swift */; };
 		F494378B20224D93006CC8DB /* AccountLedger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F494378A20224D93006CC8DB /* AccountLedger.swift */; };
@@ -40,6 +38,9 @@
 		F4A0A2F2202F76B600DCED49 /* AccountOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A0A2F1202F76B600DCED49 /* AccountOptions.swift */; };
 		F4A8BCAB202FDDC8007D17C3 /* StellarSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A8BCA4202FD557007D17C3 /* StellarSDK.framework */; };
 		F4A8BCAC202FDDC8007D17C3 /* StellarSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4A8BCA4202FD557007D17C3 /* StellarSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F4A8BCB2202FF5C4007D17C3 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A8BCB1202FF5C4007D17C3 /* CryptoSwift.framework */; };
+		F4A8BCB3202FF5C4007D17C3 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A8BCB1202FF5C4007D17C3 /* CryptoSwift.framework */; };
+		F4A8BCB5202FF5D3007D17C3 /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4A8BCB1202FF5C4007D17C3 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F4A9BDCB201829EC00742C73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A9BDCA201829EC00742C73 /* AppDelegate.swift */; };
 		F4A9BDCD201829EC00742C73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A9BDCC201829EC00742C73 /* ViewController.swift */; };
 		F4A9BDCF201829EC00742C73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4A9BDCE201829EC00742C73 /* Assets.xcassets */; };
@@ -51,9 +52,6 @@
 		F4B78A7720235767006E7BFC /* TableTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B78A7620235767006E7BFC /* TableTransactions.swift */; };
 		F4B78A7920235DFD006E7BFC /* TableEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B78A7820235DFD006E7BFC /* TableEffects.swift */; };
 		F4B78A7B20236400006E7BFC /* TableOffers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B78A7A20236400006E7BFC /* TableOffers.swift */; };
-		F4EF2C972027914D00750B4B /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EF2C962027914D00750B4B /* CryptoSwift.framework */; };
-		F4EF2C982027915900750B4B /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EF2C962027914D00750B4B /* CryptoSwift.framework */; };
-		F4EF2C992027915900750B4B /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4EF2C962027914D00750B4B /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,8 +92,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F4EF2C992027915900750B4B /* CryptoSwift.framework in Embed Frameworks */,
 				F4A8BCAC202FDDC8007D17C3 /* StellarSDK.framework in Embed Frameworks */,
+				F4A8BCB5202FF5D3007D17C3 /* CryptoSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -110,13 +108,13 @@
 		F478A4922021FEA80094A7F7 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		F478A4932021FEA80094A7F7 /* TextClick.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextClick.swift; sourceTree = "<group>"; };
 		F478A49A2021FF090094A7F7 /* TableAccounts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableAccounts.swift; sourceTree = "<group>"; };
-		F478A49E2021FF530094A7F7 /* Stuff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stuff.swift; sourceTree = "<group>"; };
 		F478A4A02022019D0094A7F7 /* TableAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableAssets.swift; sourceTree = "<group>"; };
 		F494378820224A93006CC8DB /* Accounts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Accounts.swift; sourceTree = "<group>"; };
 		F494378A20224D93006CC8DB /* AccountLedger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountLedger.swift; sourceTree = "<group>"; };
 		F49D85EA202D01CE00B16463 /* QRCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
 		F4A0A2F1202F76B600DCED49 /* AccountOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountOptions.swift; sourceTree = "<group>"; };
 		F4A8BC9D202FD557007D17C3 /* StellarSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = StellarSDK.xcodeproj; path = ../../StellarSDK/StellarSDK.xcodeproj; sourceTree = "<group>"; };
+		F4A8BCB1202FF5C4007D17C3 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = "<group>"; };
 		F4A9BDC7201829EC00742C73 /* Galactica.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Galactica.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4A9BDCA201829EC00742C73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		F4A9BDCC201829EC00742C73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
@@ -133,7 +131,6 @@
 		F4B78A7820235DFD006E7BFC /* TableEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableEffects.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		F4B78A7A20236400006E7BFC /* TableOffers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableOffers.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		F4EF2C862027865600750B4B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F4EF2C962027914D00750B4B /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,8 +138,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4EF2C982027915900750B4B /* CryptoSwift.framework in Frameworks */,
 				F4A8BCAB202FDDC8007D17C3 /* StellarSDK.framework in Frameworks */,
+				F4A8BCB2202FF5C4007D17C3 /* CryptoSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,7 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4EF2C972027914D00750B4B /* CryptoSwift.framework in Frameworks */,
+				F4A8BCB3202FF5C4007D17C3 /* CryptoSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,7 +161,6 @@
 				F478A4912021FEA80094A7F7 /* Keychain.swift */,
 				F49D85EA202D01CE00B16463 /* QRCode.swift */,
 				F478A4922021FEA80094A7F7 /* Storage.swift */,
-				F478A49E2021FF530094A7F7 /* Stuff.swift */,
 				F42201F2202E54F80027B7EA /* TextChange.swift */,
 				F478A4932021FEA80094A7F7 /* TextClick.swift */,
 				F4B6B0DC2022AFC100C8C4F2 /* Utils.swift */,
@@ -245,8 +241,8 @@
 		F4A9BDEB20182CBE00742C73 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F4A8BCB1202FF5C4007D17C3 /* CryptoSwift.framework */,
 				F4A8BC9D202FD557007D17C3 /* StellarSDK.xcodeproj */,
-				F4EF2C962027914D00750B4B /* CryptoSwift.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -395,7 +391,6 @@
 				F49D85EB202D01CE00B16463 /* QRCode.swift in Sources */,
 				F478A4962021FEA80094A7F7 /* TextClick.swift in Sources */,
 				F4B78A74202348B0006E7BFC /* TableOperations.swift in Sources */,
-				F478A49F2021FF530094A7F7 /* Stuff.swift in Sources */,
 				F478A4952021FEA80094A7F7 /* Storage.swift in Sources */,
 				F4B78A7720235767006E7BFC /* TableTransactions.swift in Sources */,
 				F4B78A7920235DFD006E7BFC /* TableEffects.swift in Sources */,
@@ -406,7 +401,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F40859D1202F3EA3006DD5C1 /* Stuff.swift in Sources */,
 				F40859D3202F3EA9006DD5C1 /* TextClick.swift in Sources */,
 				F40859CE202F3E97006DD5C1 /* Cache.swift in Sources */,
 				F40859C6202F3E7F006DD5C1 /* ViewController.swift in Sources */,

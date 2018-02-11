@@ -6,9 +6,11 @@
 //  Copyright © 2018 Armonia. All rights reserved.
 //
 
-import Foundation
+import Cocoa
 import StellarSDK
 
+
+// Extension for Account Actions
 
 extension ViewController {
    

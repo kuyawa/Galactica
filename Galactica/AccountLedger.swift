@@ -10,6 +10,8 @@ import Cocoa
 import StellarSDK
 
 
+// Extension for Account Ledger
+
 extension ViewController {
     
     func loadPayments(refresh: Bool? = false) {

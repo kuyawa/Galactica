@@ -1,16 +1,6 @@
 TODO:
 
-- Status in red for errors
-
-x Send money
-- Auth flags
-x Inflation
-- Trust
-- Merge
-- Data
-- Domain
-
-- Menu option Galactica/Keychain clear
+- Set initial account options in form, cache info
 - Remove all prints from app and sdk
 - On account selected set refresh ledger to true
 - Cache balances
@@ -20,29 +10,41 @@ x Inflation
 
 DONE:
 
+x Menu option Galactica/Keychain clear
+x Status in red for errors
+x Send money
+x Auth flags
+x Inflation
+x Trust
+x Merge
+x Data
+x Domain
 x Set multiple options in one form: authorization flags, inflation, allowtrust, changetrust, merge, homedomain, signers
 x Send payment
 x Finish basic StellarSDK for submitting
-x Rethink keychain storage, use public/secret pair
+x Rethink keychain storage, use public/secret pair, hash by pin in future version
 x QRCodes on account generation
-x refresh button on ledger
+x Refresh button on ledger
 x Save address to userdefaults and keychain
 x Create account generator and friendbot funder
 x Status bar at bottom for info and errors
 x Resize all views
 x Ledger: List all operations
-x alternate rows
-x date utils, money utils
+x Alternate rows
+x Date utils, money utils
 x Show balances
 x Load assets from horizon
 x Save secret key in Keychain
 x On init load keypair from secret in keychain
-x Appicon
+x AppIcon
 
-Version 2
 
-- Add payee to contacts
+Version Next
+
 - Contacts
+  Add payee to contacts
+- Orderbook and trade history
+- SDEX
 
 
 END

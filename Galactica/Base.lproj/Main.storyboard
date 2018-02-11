@@ -23,6 +23,12 @@
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem title="Clear Keychain" id="Oc9-id-L38">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="onKeychainClear:" target="Ady-hI-5gd" id="9pL-2C-rc3"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
                                         <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
@@ -899,7 +905,7 @@
                                 <font key="font" metaFont="system"/>
                                 <tabViewItems>
                                     <tabViewItem label="Accounts" identifier="1" id="dPe-8x-35A">
-                                        <view key="view" id="eFL-EK-4Sp">
+                                        <view key="view" ambiguous="YES" id="eFL-EK-4Sp">
                                             <rect key="frame" x="0.0" y="0.0" width="683" height="436"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
@@ -1088,7 +1094,7 @@
                                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xzi-26-Soc">
                                                             <rect key="frame" x="14" y="8" width="172" height="32"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <buttonCell key="cell" type="push" title="Create New Account" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aGA-vx-vvP">
+                                                            <buttonCell key="cell" type="push" title="Create Account" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aGA-vx-vvP">
                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                 <font key="font" metaFont="system"/>
                                                             </buttonCell>
@@ -1311,13 +1317,59 @@
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="42p-73-n8f"/>
                                                         </imageView>
+                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8FO-GP-ETi">
+                                                            <rect key="frame" x="489" y="108" width="140" height="17"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Save this information" id="EHs-AK-AD1">
+                                                                <font key="font" metaFont="system"/>
+                                                                <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                        </textField>
+                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KtI-0P-CLp">
+                                                            <rect key="frame" x="489" y="88" width="140" height="17"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Take a screen shot or" id="ymd-fg-d63">
+                                                                <font key="font" metaFont="system"/>
+                                                                <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                        </textField>
+                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8L0-Lh-5GY">
+                                                            <rect key="frame" x="489" y="68" width="140" height="17"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Write down on paper" id="wg0-Bz-Fv0">
+                                                                <font key="font" metaFont="system"/>
+                                                                <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                        </textField>
+                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4J-1u-mah">
+                                                            <rect key="frame" x="489" y="48" width="140" height="17"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Store in a safe place" id="qMQ-vo-q12">
+                                                                <font key="font" metaFont="system"/>
+                                                                <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                        </textField>
+                                                        <box fixedFrame="YES" boxType="custom" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="u02-tH-hV6">
+                                                            <rect key="frame" x="473" y="30" width="2" height="114"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <view key="contentView" ambiguous="YES" id="WGp-BN-52Q">
+                                                                <rect key="frame" x="1" y="1" width="0.0" height="112"/>
+                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            </view>
+                                                            <color key="borderColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="fillColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </box>
                                                     </subviews>
                                                 </customView>
                                             </subviews>
                                         </view>
                                     </tabViewItem>
                                     <tabViewItem label="Ledger" identifier="" id="ezs-WC-dHP">
-                                        <view key="view" ambiguous="YES" id="5kv-LK-YBx">
+                                        <view key="view" id="5kv-LK-YBx">
                                             <rect key="frame" x="0.0" y="0.0" width="683" height="436"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
@@ -2071,7 +2123,7 @@
                                                             </view>
                                                         </tabViewItem>
                                                         <tabViewItem label="Effects" identifier="" id="b48-jG-p3c">
-                                                            <view key="view" id="wwm-RU-CYw">
+                                                            <view key="view" ambiguous="YES" id="wwm-RU-CYw">
                                                                 <rect key="frame" x="10" y="33" width="678" height="410"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <subviews>
@@ -2308,7 +2360,7 @@
                                                             </view>
                                                         </tabViewItem>
                                                         <tabViewItem label="Offers" identifier="" id="pCZ-EG-07y">
-                                                            <view key="view" ambiguous="YES" id="kh2-aD-VSH">
+                                                            <view key="view" id="kh2-aD-VSH">
                                                                 <rect key="frame" x="10" y="33" width="678" height="410"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <subviews>
@@ -2720,12 +2772,12 @@
                                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bTv-Pe-zOh">
                                                             <rect key="frame" x="244" y="387" width="416" height="26"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                            <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="p42-rD-Aw7" id="RB0-my-mac">
+                                                            <popUpButtonCell key="cell" type="push" title="GA123456..." bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="p42-rD-Aw7" id="RB0-my-mac">
                                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                                                 <font key="font" metaFont="menu"/>
                                                                 <menu key="menu" id="IUh-xP-Vtx">
                                                                     <items>
-                                                                        <menuItem title="Item 1" state="on" id="p42-rD-Aw7"/>
+                                                                        <menuItem title="GA123456..." state="on" id="p42-rD-Aw7"/>
                                                                         <menuItem title="Item 2" id="2LM-bR-P5A"/>
                                                                         <menuItem title="Item 3" id="Ygz-Hc-OWs"/>
                                                                     </items>
@@ -2756,7 +2808,7 @@
                                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C56-Ht-p95">
                                                             <rect key="frame" x="154" y="336" width="120" height="18"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                            <buttonCell key="cell" type="check" title="Required" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="U3w-Il-Bge">
+                                                            <buttonCell key="cell" type="check" title="Required" bezelStyle="regularSquare" imagePosition="left" inset="2" id="U3w-Il-Bge">
                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                 <font key="font" metaFont="system"/>
                                                             </buttonCell>
@@ -2764,7 +2816,7 @@
                                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HQB-Si-G3h">
                                                             <rect key="frame" x="279" y="336" width="120" height="18"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                            <buttonCell key="cell" type="check" title="Revocable" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="M1O-D5-37w">
+                                                            <buttonCell key="cell" type="check" title="Revocable" bezelStyle="regularSquare" imagePosition="left" inset="2" id="M1O-D5-37w">
                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                 <font key="font" metaFont="system"/>
                                                             </buttonCell>
@@ -2772,7 +2824,7 @@
                                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yHH-BB-mX7">
                                                             <rect key="frame" x="406" y="336" width="101" height="18"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                            <buttonCell key="cell" type="check" title="Immutable" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="SaG-2i-a4T">
+                                                            <buttonCell key="cell" type="check" title="Immutable" bezelStyle="regularSquare" imagePosition="left" inset="2" id="SaG-2i-a4T">
                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                 <font key="font" metaFont="system"/>
                                                             </buttonCell>

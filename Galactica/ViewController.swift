@@ -13,6 +13,7 @@ import StellarSDK
 class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
 
     var app = NSApp.delegate as! AppDelegate
+    
     var selectedAccount = 0
     var refreshAccounts = false
     var refreshLedger   = false
@@ -100,6 +101,11 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
     
     //---- ACTIONS
     
+    @IBAction func onKeychainClear(_ sender: NSMenuItem) {
+        //Keychain.clear()
+        print("Keychain cleared")
+    }
+    
     @IBAction func onTabAccounts(_ sender: AnyObject) {
         tabMain.selectTabViewItem(at: 0)
         if refreshAccounts {
@@ -143,7 +149,7 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
         case 1: textSetInflation.becomeFirstResponder(); break
         case 2: textAllowTrustAddress.becomeFirstResponder(); break
         case 3: textChangeTrustAddress.becomeFirstResponder(); break
-        case 4: textDataKey.becomeFirstResponder(); break
+        case 4: textMergeAccount.becomeFirstResponder(); break
         case 5: textFundAddress.becomeFirstResponder(); break
         default: break
         }
@@ -193,45 +199,7 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
     }
     
 
-    //---- ACCOUNT OPTIONS
-    
-    @IBAction func onSetAccount(_ sender: Any) {
-        //
-    }
-    
-    @IBAction func onSetOptions(_ sender: Any) {
-        self.setAuthorization()
-    }
-    
-    @IBAction func onSetInflation(_ sender: Any) {
-        self.setInflation()
-    }
-    
-    @IBAction func onAllowTrust(_ sender: Any) {
-        self.allowTrust()
-    }
-    
-    @IBAction func onChangeTrust(_ sender: Any) {
-        self.changeTrust()
-    }
-    
-    @IBAction func onMergeAccounts(_ sender: Any) {
-        self.mergeAccounts()
-    }
-    
-    @IBAction func onHomeDomain(_ sender: Any) {
-        self.setHomeDomain()
-    }
-    
-    @IBAction func onSetData(_ sender: Any) {
-        self.setAccountData()
-    }
-    
-    @IBAction func onFundAccount(_ sender: Any) {
-        self.fundAccount()
-    }
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         main()

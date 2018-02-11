@@ -6,10 +6,50 @@
 //  Copyright © 2018 Armonia. All rights reserved.
 //
 
-import Foundation
+import Cocoa
 import StellarSDK
 
+
+// Extension for Account Options
+
 extension ViewController {
+    
+    @IBAction func onSetAccount(_ sender: Any) {
+        //
+    }
+    
+    @IBAction func onSetOptions(_ sender: Any) {
+        setAuthorization()
+    }
+    
+    @IBAction func onSetInflation(_ sender: Any) {
+        setInflation()
+    }
+    
+    @IBAction func onAllowTrust(_ sender: Any) {
+        allowTrust()
+    }
+    
+    @IBAction func onChangeTrust(_ sender: Any) {
+        changeTrust()
+    }
+    
+    @IBAction func onMergeAccounts(_ sender: Any) {
+        mergeAccounts()
+    }
+    
+    @IBAction func onHomeDomain(_ sender: Any) {
+        setHomeDomain()
+    }
+    
+    @IBAction func onSetData(_ sender: Any) {
+        setAccountData()
+    }
+    
+    @IBAction func onFundAccount(_ sender: Any) {
+        fundAccount()
+    }
+    
     
     func getPopupAccount() -> StellarSDK.Account? {
         let selAcct = popupSetAccount.selectedTag()

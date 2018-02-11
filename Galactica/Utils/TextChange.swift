@@ -9,7 +9,7 @@
 import Cocoa
 import Foundation
 
-
+// TODO: Not used, marked for removal
 class TextChange: NSTextView {
     var oldValue = ""
 }
