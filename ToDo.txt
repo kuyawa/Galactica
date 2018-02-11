@@ -1,15 +1,30 @@
 TODO:
 
+- Status in red for errors
+
+x Send money
+- Auth flags
+x Inflation
+- Trust
+- Merge
+- Data
+- Domain
+
+- Menu option Galactica/Keychain clear
+- Remove all prints from app and sdk
 - On account selected set refresh ledger to true
 - Cache balances
 - Cache results on ledger
-- Add manage data to main menu
-- Finish basic StellarSDK for submitting
 ? Vanity generator
 ? Account Icons: cash:note savings:piggy vault:vault business:cashier donations:hat
 
 DONE:
 
+x Set multiple options in one form: authorization flags, inflation, allowtrust, changetrust, merge, homedomain, signers
+x Send payment
+x Finish basic StellarSDK for submitting
+x Rethink keychain storage, use public/secret pair
+x QRCodes on account generation
 x refresh button on ledger
 x Save address to userdefaults and keychain
 x Create account generator and friendbot funder
@@ -21,31 +36,13 @@ x date utils, money utils
 x Show balances
 x Load assets from horizon
 x Save secret key in Keychain
-x On init load keypair from secret in keychian
+x On init load keypair from secret in keychain
 x Appicon
 
 Version 2
 
-- All submit operations
-- Send money
-- Inflation
-- Trust
-- Merge
-- Authorization
+- Add payee to contacts
+- Contacts
 
-
-
-Accounts
-if no account show panel to create new account
-once created and funded, use it as main
-show main panel: last payments
-
-TabView
-info/balances, payments, operations, transactions, effects, offers, options
-
-Actions:
-fund account : address, amount, memo
-send payment : address, amount, asset, memo
-set inflation: address, memo
 
 END

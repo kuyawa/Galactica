@@ -28,6 +28,7 @@ class TablePayments: NSObject, NSTableViewDataSource, NSTableViewDelegate {
                 onReady(response.error!.text)
                 return
             }
+
             DispatchQueue.main.async {
                 self.list = response.records
                 self.tableView?.target     = self

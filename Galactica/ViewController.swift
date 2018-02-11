@@ -26,12 +26,22 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
     var effectsController      = TableEffects()
     var offersController       = TableOffers()
     
+    
+    //---- OUTLETS
+    
     // Main view
     @IBOutlet weak var labelAccounts : NSTextField!
     @IBOutlet weak var labelGenerate : NSTextField!
     @IBOutlet weak var labelLedger   : NSTextField!
-    @IBOutlet weak var textStatus: NSTextField!
-        
+    @IBOutlet weak var textStatus    : NSTextField!
+    @IBOutlet weak var qrcodePublic  : NSImageView!
+    @IBOutlet weak var qrcodeSecret  : NSImageView!
+    
+    
+    // TabViews
+    @IBOutlet weak var tabMain   : NSTabView!
+    @IBOutlet weak var tabLedger : NSTabView!
+
     // Tables
     @IBOutlet weak var tableAccounts     : NSTableView!
     @IBOutlet weak var tableAssets       : NSTableView!
@@ -41,17 +51,54 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
     @IBOutlet weak var tableEffects      : NSTableView!
     @IBOutlet weak var tableOffers       : NSTableView!
     
-
     // Generate address
-    @IBOutlet weak var textName      : NSTextField!
-    @IBOutlet weak var textAddress   : NSTextField!
-    @IBOutlet weak var textSecret    : NSTextField!
-    @IBOutlet weak var buttonNetwork : NSSegmentedControl!
-    @IBOutlet weak var checkSecret   : NSButton!
+    @IBOutlet weak var textName        : NSTextField!
+    @IBOutlet weak var textAddress     : NSTextField!
+    @IBOutlet weak var textSecret      : NSTextField!
+    @IBOutlet weak var buttonNetwork   : NSSegmentedControl!
+    @IBOutlet weak var buttonFriendbot : NSButton!
+    @IBOutlet weak var checkSecret     : NSButton!
     
-    // TabView
-    @IBOutlet weak var tabMain   : NSTabView!
-    @IBOutlet weak var tabLedger : NSTabView!
+    // Payment
+    @IBOutlet weak var popupAccounts   : NSPopUpButton!
+    @IBOutlet weak var textPayAddress  : NSTextField!
+    @IBOutlet weak var textPayAmount   : NSTextField!
+    @IBOutlet weak var popupAssets     : NSPopUpButton!
+    //BOutlet weak var textPayAsset    : NSTextField!
+    @IBOutlet weak var textPayMemo     : NSTextField!
+    @IBOutlet weak var buttonPayment   : NSButton!
+    
+    // Options
+    @IBOutlet weak var popupSetAccount        : NSPopUpButton!
+    @IBOutlet weak var checkAuthRequired      : NSButton!
+    @IBOutlet weak var checkAuthRevocable     : NSButton!
+    @IBOutlet weak var checkAuthImmutable     : NSButton!
+    
+    @IBOutlet weak var textSetInflation       : NSTextField!
+    @IBOutlet weak var textAllowTrustAddress  : NSTextField!
+    @IBOutlet weak var textAllowTrustAsset    : NSTextField!
+    @IBOutlet weak var checkAllowTrustAuth    : NSButton!
+    @IBOutlet weak var textChangeTrustAddress : NSTextField!
+    @IBOutlet weak var textChangeTrustAsset   : NSTextField!
+    @IBOutlet weak var textChangeTrustLimit   : NSTextField!
+    @IBOutlet weak var textMergeAccount       : NSTextField!
+    @IBOutlet weak var textHomeDomain         : NSTextField!
+    @IBOutlet weak var textDataKey            : NSTextField!
+    @IBOutlet weak var textDataValue          : NSTextField!
+    @IBOutlet weak var textFundAddress        : NSTextField!
+    @IBOutlet weak var textFundBalance        : NSTextField!
+    
+    @IBOutlet weak var buttonSetOptions       : NSButton!
+    @IBOutlet weak var buttonSetInflation     : NSButton!
+    @IBOutlet weak var buttonAllowTrust       : NSButton!
+    @IBOutlet weak var buttonChangeTrust      : NSButton!
+    @IBOutlet weak var buttonMerge            : NSButton!
+    @IBOutlet weak var buttonHomeDomain       : NSButton!
+    @IBOutlet weak var buttonSetData          : NSButton!
+    @IBOutlet weak var buttonFund             : NSButton!
+    
+    
+    //---- ACTIONS
     
     @IBAction func onTabAccounts(_ sender: AnyObject) {
         tabMain.selectTabViewItem(at: 0)
@@ -66,6 +113,7 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
         tabMain.selectTabViewItem(at: 1)
     }
     
+    // Not used? Remove
     @IBAction func onTabLedger(_ sender: AnyObject) {
         tabMain.selectTabViewItem(at: 2)
         if let tab = tabLedger.selectedTabViewItem {
@@ -78,10 +126,43 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
             }
         }
     }
+
+    @IBAction func onTabPayment(_ sender: AnyObject) {
+        tabMain.selectTabViewItem(at: 3)
+        loadAccountsPopup()
+        // TODO: remove when done testing
+        textPayAddress.stringValue = "GACNHBPK6ZC77G545PQSQ2V7RWS5SQ4W56E2DNRBMPDFEQBQMTEH3XFW"
+    }
+    
+    @IBAction func onTabOptions(_ sender: AnyObject) {
+        tabMain.selectTabViewItem(at: 4)
+        loadOptionsPopup()
+        
+        switch sender.tag {
+        case 0: break
+        case 1: textSetInflation.becomeFirstResponder(); break
+        case 2: textAllowTrustAddress.becomeFirstResponder(); break
+        case 3: textChangeTrustAddress.becomeFirstResponder(); break
+        case 4: textDataKey.becomeFirstResponder(); break
+        case 5: textFundAddress.becomeFirstResponder(); break
+        default: break
+        }
+    }
+
+    @IBAction func onSendPayment(_ sender: Any) {
+        sendPayment()
+    }
+    
+    @IBAction func onPayAccount(_ sender: Any) {
+        let popup = sender as! NSPopUpButton
+        let select = popup.selectedTag()
+        loadAssetsPopup(select)  // Fill assets popup with available assets for that account
+    }
     
     @IBAction func onSelectLedger(_ sender: AnyObject) {
         tabMain.selectTabViewItem(at: 2)             // Ledger tab
         tabLedger.selectTabViewItem(at: sender.tag)  // Selected tab
+        if sender.tag == 0 && paymentsController.list.count < 1 { loadPayments() }
     }
     
     
@@ -111,11 +192,54 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
         }
     }
     
+
+    //---- ACCOUNT OPTIONS
+    
+    @IBAction func onSetAccount(_ sender: Any) {
+        //
+    }
+    
+    @IBAction func onSetOptions(_ sender: Any) {
+        self.setAuthorization()
+    }
+    
+    @IBAction func onSetInflation(_ sender: Any) {
+        self.setInflation()
+    }
+    
+    @IBAction func onAllowTrust(_ sender: Any) {
+        self.allowTrust()
+    }
+    
+    @IBAction func onChangeTrust(_ sender: Any) {
+        self.changeTrust()
+    }
+    
+    @IBAction func onMergeAccounts(_ sender: Any) {
+        self.mergeAccounts()
+    }
+    
+    @IBAction func onHomeDomain(_ sender: Any) {
+        self.setHomeDomain()
+    }
+    
+    @IBAction func onSetData(_ sender: Any) {
+        self.setAccountData()
+    }
+    
+    @IBAction func onFundAccount(_ sender: Any) {
+        self.fundAccount()
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         main()
     }
 
+    
+    //---- MAIN
+    
     func main() {
         // Assign tables to controllers
         tabLedger.delegate = self
@@ -127,7 +251,6 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
         
         // Load initial data
         loadAccounts()
-        loadAssets(0) // First account
     }
     
     func loadAccounts(){
@@ -141,29 +264,98 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
         //tableAccounts.doubleAction = #selector(onSelectedAccount(_:))
         tableAccounts.reloadData()
         selectedAccount = 0
+        loadAssets(0) // First account
     }
     
+    func loadAccountsPopup() {
+        popupAccounts.removeAllItems()
+        
+        for item in app.storage.accounts {
+            let title = item.name + " - " + item.key.subtext(from: 0, to: 10) + "..." + item.key.subtext(from: 46, to: 55)
+            popupAccounts.addItem(withTitle: title)
+        }
+        
+        // Assign index to tag for item selection
+        for (index, item) in popupAccounts.itemArray.enumerated() {
+            item.tag = index
+        }
+        
+        popupAccounts.selectItem(at: 0)
+        loadAssetsPopup(0)
+    }
+    
+    func loadAssetsPopup(_ accountIndex: Int) {
+        popupAssets.removeAllItems()
+        
+        let key = app.storage.accounts[accountIndex].key
+        
+        if let assets = app.cache.assets[key] {
+            for asset in assets {
+                if asset.symbol == "XLM" {
+                    popupAssets.addItem(withTitle: "XLM")
+                } else {
+                    popupAssets.addItem(withTitle: asset.symbol + " - " + asset.issuer.subtext(from: 0, to: 10) + "...")
+                }
+            }
+            
+            // Assign index to tag for item selection
+            for (index, item) in popupAssets.itemArray.enumerated() {
+                item.tag = index
+            }
+        } else {
+            loadAssets(accountIndex)
+        }
+        
+        popupAssets.selectItem(withTitle: "XLM")
+    }
+    
+    func loadOptionsPopup() {
+        popupSetAccount.removeAllItems()
+        
+        for item in app.storage.accounts {
+            let title = item.name + " - " + item.key.subtext(from: 0, to: 10) + "..." + item.key.subtext(from: 46, to: 55)
+            popupSetAccount.addItem(withTitle: title)
+        }
+        
+        // Assign index to tag for item selection
+        for (index, item) in popupSetAccount.itemArray.enumerated() {
+            item.tag = index
+        }
+        
+        popupAccounts.selectItem(at: 0)
+        loadAssetsPopup(0)
+    }
+
     func loadAssets(_ selected: Int) {
         if selected < 0 || selected >= accountsController.list.count { return }
+        
         selectedAccount = selected
         assetsLoading()
+        
         let row = accountsController.list[selected]
         let net = row.net=="Test" ? StellarSDK.Horizon.Network.test : StellarSDK.Horizon.Network.live
         let account = StellarSDK.Account(row.key, net)
+        
         account.getBalances { balances in
             var assets: [AssetData] = []
+            print("Balances", balances)
+            print("Count", balances.count)
             if balances.count < 1 {
                 DispatchQueue.main.async {
                     self.showAssets(assets)
-                    self.showStatus("Assets not found")
-                    return
+                    self.showWarning("Assets not found!")
                 }
+                return
             }
+            
             for balance in balances {
-                print(balance.assetCode, balance.balance, balance.assetType)
+                //print(balance.assetCode, balance.balance, balance.assetType)
                 let asset = AssetData(symbol: balance.assetCode, issuer: balance.assetIssuer, amount: balance.balance)
                 assets.append(asset)
             }
+            
+            self.app.cache.assets[row.key] = assets
+            
             DispatchQueue.main.async {
                 self.showAssets(assets)
                 self.showStatus("Assets loaded")
@@ -174,7 +366,7 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
     func assetsLoading() {
         showStatus("Loading assets, please wait...")
         var assets: [AssetData] = []
-        let asset = AssetData(symbol: "Loading...", issuer: "Wait while we fetch the server", amount: "")
+        let asset = AssetData(symbol: "Loading...", issuer: "Wait while we fetch the data", amount: "")
         assets.append(asset)
         showAssets(assets)
     }
@@ -194,8 +386,7 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
     func tabView(_ tabView: NSTabView, didSelect tabViewItem: NSTabViewItem?) {
         guard let tab = tabViewItem else { return }
         let index = tabLedger.indexOfTabViewItem(tab)
-        //print("Tab selected", index)
-        
+
         switch index {
         case 0: loadPayments(); break
         case 1: loadOperations(); break
@@ -206,12 +397,27 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
         }
     }
     
-    func showStatus(_ text: String) {
+    func showStatus(_ text: String, _ warn: Bool = false) {
+        if warn { showWarning(text) } else { showMessage(text) }
+    }
+    
+    func showMessage(_ text: String) {
         textStatus.stringValue = text
+        textStatus.textColor = NSColor.black
+    }
+    
+    func showWarning(_ text: String) {
+        textStatus.stringValue = text
+        textStatus.textColor = NSColor.red
     }
     
     func readyStatus(_ text: String) {
         textStatus.stringValue = "Ready"
+        textStatus.textColor = NSColor.black
+    }
+    
+    func clearStatus() {
+        textStatus.stringValue = ""
     }
     
 }

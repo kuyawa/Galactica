@@ -61,9 +61,8 @@ extension String {
 }
 
 extension Int {
-    var str : String {
-        return String(describing: self)
-    }
+    var str: String { return String(describing: self) }
+    var on: Bool { return self > 0 }
 }
 
 extension Double {
@@ -103,6 +102,10 @@ extension Date {
         }
         return date
     }
+}
+
+extension Bool {
+    var int: UInt8 { return self ? 0x1 : 0x0 }
 }
 
 extension NSColor {
