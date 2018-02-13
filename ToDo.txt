@@ -1,7 +1,9 @@
 TODO:
 
+- Menu/Galactica/View Logs/ show raw response for every request
+- Prepare Github repo, upload all
+- Take screenshots of all views
 - Set initial account options in form, cache info
-- Remove all prints from app and sdk
 - On account selected set refresh ledger to true
 - Cache balances
 - Cache results on ledger
@@ -10,6 +12,12 @@ TODO:
 
 DONE:
 
+x Remove all prints from app and sdk
+x List view for showing account data
+x View icon for account data fields
+x Set data not working, padding with zeroes in multiple of four bytes fixed it
+x Disable FundTestnet button when live net
+? Allow remove inflation destination with blank address? Not allowed, set inflation to own address
 x Menu option Galactica/Keychain clear
 x Status in red for errors
 x Send money
@@ -41,10 +49,10 @@ x AppIcon
 
 Version Next
 
-- Contacts
-  Add payee to contacts
+- Dark theme
+- Contacts: Add payee to contacts
 - Orderbook and trade history
-- SDEX
+- SDEX integration
 
 
 END

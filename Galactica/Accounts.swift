@@ -27,7 +27,7 @@ extension ViewController {
     }
     
     @IBAction func onNetwork(_ sender: Any) {
-        //
+        buttonFriendbot.isEnabled = (buttonNetwork.selectedSegment == 1)
     }
     
     @IBAction func onDeleting(_ sender: Any) {
@@ -101,14 +101,13 @@ extension ViewController {
     }
     
     func deleteAccount() {
-        // TODO: Delete selected account
         let selected = tableAccounts.selectedRow
-        if selected < 0 || selected > app.storage.accounts.count {
+        if selected < 0 || selected >= app.storage.accounts.count {
             showWarning("Select an account first!")
             return
         }
         
-        // Alert! If ok:
+        // TODO: Alert! If ok then delete
         let account = app.storage.accounts[selected]
         Keychain.delete(account.key)                // Remove from keychain
         app.storage.accounts.remove(at: selected)   // Remove from storage list

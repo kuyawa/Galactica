@@ -37,7 +37,6 @@ class TableAssets: NSObject, NSTableViewDataSource, NSTableViewDelegate {
         
         let item   = list[row]
         let cellId = "assetCell"
-        //print(tableView.identifier)
         
         if let cell = tableView.make(withIdentifier: cellId, owner: nil) as? AssetCellView {
             cell.textSymbol?.stringValue = item.symbol

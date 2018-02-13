@@ -49,30 +49,29 @@ class TableOperations: NSObject, NSTableViewDataSource, NSTableViewDelegate {
         
         let item   = list[row]
         let cellId = column.identifier
-        //print(tableView.identifier)
         
         var text = ""
 
         switch item.typeInt {
         case 0: /* Create account */
             switch cellId {
-            case "textDate"   : text = item.createdAt?.dateISO.string ?? "?"; break
+            case "textDate"   : text = item.createdAt?.dateISO.string ?? ""; break
             case "textId"     : text = item.typeText; break
-            case "textFrom"   : text = item.funder ?? "?"; break
-            case "textTo"     : text = item.sourceAccount ?? "?"; break
-            case "textAmount" : text = item.startingBalance?.money ?? "?"; break
+            case "textFrom"   : text = item.funder ?? ""; break
+            case "textTo"     : text = item.sourceAccount ?? ""; break
+            case "textAmount" : text = item.startingBalance?.money ?? ""; break
             case "textAsset"  : text = "XLM"; break
-            default           : text = "?" }
+            default           : text = "" }
             break
         default: /* Payment */
             switch cellId {
-            case "textDate"   : text = item.createdAt?.dateISO.string ?? "?"; break
+            case "textDate"   : text = item.createdAt?.dateISO.string ?? ""; break
             case "textId"     : text = item.typeText; break
-            case "textFrom"   : text = item.from ?? "?"; break
-            case "textTo"     : text = item.to   ?? "?"; break
-            case "textAmount" : text = item.amount?.money ?? "?"; break
-            case "textAsset"  : text = (item.assetType == "native" ? "XLM" : item.assetCode) ?? "?"; break
-            default           : text = "?" }
+            case "textFrom"   : text = item.from ?? ""; break
+            case "textTo"     : text = item.to   ?? ""; break
+            case "textAmount" : text = item.amount?.money ?? ""; break
+            case "textAsset"  : text = (item.assetType == "native" ? "XLM" : item.assetCode) ?? ""; break
+            default           : text = "" }
             break
         }
         

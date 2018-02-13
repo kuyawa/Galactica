@@ -36,11 +36,6 @@
 		F494378B20224D93006CC8DB /* AccountLedger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F494378A20224D93006CC8DB /* AccountLedger.swift */; };
 		F49D85EB202D01CE00B16463 /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49D85EA202D01CE00B16463 /* QRCode.swift */; };
 		F4A0A2F2202F76B600DCED49 /* AccountOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A0A2F1202F76B600DCED49 /* AccountOptions.swift */; };
-		F4A8BCAB202FDDC8007D17C3 /* StellarSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A8BCA4202FD557007D17C3 /* StellarSDK.framework */; };
-		F4A8BCAC202FDDC8007D17C3 /* StellarSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4A8BCA4202FD557007D17C3 /* StellarSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F4A8BCB2202FF5C4007D17C3 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A8BCB1202FF5C4007D17C3 /* CryptoSwift.framework */; };
-		F4A8BCB3202FF5C4007D17C3 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A8BCB1202FF5C4007D17C3 /* CryptoSwift.framework */; };
-		F4A8BCB5202FF5D3007D17C3 /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4A8BCB1202FF5C4007D17C3 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F4A9BDCB201829EC00742C73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A9BDCA201829EC00742C73 /* AppDelegate.swift */; };
 		F4A9BDCD201829EC00742C73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A9BDCC201829EC00742C73 /* ViewController.swift */; };
 		F4A9BDCF201829EC00742C73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4A9BDCE201829EC00742C73 /* Assets.xcassets */; };
@@ -52,6 +47,11 @@
 		F4B78A7720235767006E7BFC /* TableTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B78A7620235767006E7BFC /* TableTransactions.swift */; };
 		F4B78A7920235DFD006E7BFC /* TableEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B78A7820235DFD006E7BFC /* TableEffects.swift */; };
 		F4B78A7B20236400006E7BFC /* TableOffers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B78A7A20236400006E7BFC /* TableOffers.swift */; };
+		F4CAF11C2033155600537C06 /* StellarSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A8BCA4202FD557007D17C3 /* StellarSDK.framework */; };
+		F4CAF11D2033155600537C06 /* StellarSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4A8BCA4202FD557007D17C3 /* StellarSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F4CAF1212033156200537C06 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4CAF1202033156200537C06 /* CryptoSwift.framework */; };
+		F4CAF1222033156200537C06 /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4CAF1202033156200537C06 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F4CAF1242033316400537C06 /* AccountData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CAF1232033316400537C06 /* AccountData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,13 +69,6 @@
 			remoteGlobalIDString = F41A867B2017A448008E73ED;
 			remoteInfo = StellarSDKTests;
 		};
-		F4A8BCAD202FDDC8007D17C3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F4A8BC9D202FD557007D17C3 /* StellarSDK.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F41A86712017A448008E73ED;
-			remoteInfo = StellarSDK;
-		};
 		F4A9BDD9201829EC00742C73 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F4A9BDBF201829EC00742C73 /* Project object */;
@@ -83,17 +76,24 @@
 			remoteGlobalIDString = F4A9BDC6201829EC00742C73;
 			remoteInfo = StellarPlay;
 		};
+		F4CAF11E2033155600537C06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4A8BC9D202FD557007D17C3 /* StellarSDK.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F41A86712017A448008E73ED;
+			remoteInfo = StellarSDK;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		F4EF2C9320278D4800750B4B /* Embed Frameworks */ = {
+		F4CAF11B203314BD00537C06 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F4A8BCAC202FDDC8007D17C3 /* StellarSDK.framework in Embed Frameworks */,
-				F4A8BCB5202FF5D3007D17C3 /* CryptoSwift.framework in Embed Frameworks */,
+				F4CAF11D2033155600537C06 /* StellarSDK.framework in Embed Frameworks */,
+				F4CAF1222033156200537C06 /* CryptoSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -114,7 +114,6 @@
 		F49D85EA202D01CE00B16463 /* QRCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
 		F4A0A2F1202F76B600DCED49 /* AccountOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountOptions.swift; sourceTree = "<group>"; };
 		F4A8BC9D202FD557007D17C3 /* StellarSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = StellarSDK.xcodeproj; path = ../../StellarSDK/StellarSDK.xcodeproj; sourceTree = "<group>"; };
-		F4A8BCB1202FF5C4007D17C3 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = "<group>"; };
 		F4A9BDC7201829EC00742C73 /* Galactica.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Galactica.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4A9BDCA201829EC00742C73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		F4A9BDCC201829EC00742C73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
@@ -130,6 +129,8 @@
 		F4B78A7620235767006E7BFC /* TableTransactions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableTransactions.swift; sourceTree = "<group>"; };
 		F4B78A7820235DFD006E7BFC /* TableEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableEffects.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		F4B78A7A20236400006E7BFC /* TableOffers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableOffers.swift; sourceTree = "<group>"; wrapsLines = 0; };
+		F4CAF1202033156200537C06 /* CryptoSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4CAF1232033316400537C06 /* AccountData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountData.swift; sourceTree = "<group>"; };
 		F4EF2C862027865600750B4B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,8 +139,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4A8BCAB202FDDC8007D17C3 /* StellarSDK.framework in Frameworks */,
-				F4A8BCB2202FF5C4007D17C3 /* CryptoSwift.framework in Frameworks */,
+				F4CAF11C2033155600537C06 /* StellarSDK.framework in Frameworks */,
+				F4CAF1212033156200537C06 /* CryptoSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,7 +148,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4A8BCB3202FF5C4007D17C3 /* CryptoSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +220,7 @@
 				F494378820224A93006CC8DB /* Accounts.swift */,
 				F494378A20224D93006CC8DB /* AccountLedger.swift */,
 				F4A0A2F1202F76B600DCED49 /* AccountOptions.swift */,
+				F4CAF1232033316400537C06 /* AccountData.swift */,
 				F4A9BDCC201829EC00742C73 /* ViewController.swift */,
 				F4A9BDD0201829EC00742C73 /* Main.storyboard */,
 				F4A9BDCE201829EC00742C73 /* Assets.xcassets */,
@@ -241,7 +242,7 @@
 		F4A9BDEB20182CBE00742C73 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F4A8BCB1202FF5C4007D17C3 /* CryptoSwift.framework */,
+				F4CAF1202033156200537C06 /* CryptoSwift.framework */,
 				F4A8BC9D202FD557007D17C3 /* StellarSDK.xcodeproj */,
 			);
 			path = Frameworks;
@@ -257,12 +258,12 @@
 				F4A9BDC3201829EC00742C73 /* Sources */,
 				F4A9BDC4201829EC00742C73 /* Frameworks */,
 				F4A9BDC5201829EC00742C73 /* Resources */,
-				F4EF2C9320278D4800750B4B /* Embed Frameworks */,
+				F4CAF11B203314BD00537C06 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F4A8BCAE202FDDC8007D17C3 /* PBXTargetDependency */,
+				F4CAF11F2033155600537C06 /* PBXTargetDependency */,
 			);
 			name = Galactica;
 			productName = StellarPlay;
@@ -375,13 +376,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4A0A2F2202F76B600DCED49 /* AccountOptions.swift in Sources */,
-				F4A9BDCD201829EC00742C73 /* ViewController.swift in Sources */,
 				F4A9BDCB201829EC00742C73 /* AppDelegate.swift in Sources */,
+				F4A9BDCD201829EC00742C73 /* ViewController.swift in Sources */,
+				F494378920224A93006CC8DB /* Accounts.swift in Sources */,
 				F494378B20224D93006CC8DB /* AccountLedger.swift in Sources */,
+				F4A0A2F2202F76B600DCED49 /* AccountOptions.swift in Sources */,
 				F4B6B0DD2022AFC100C8C4F2 /* Utils.swift in Sources */,
 				F4B6B0D82022943500C8C4F2 /* TablePayments.swift in Sources */,
-				F494378920224A93006CC8DB /* Accounts.swift in Sources */,
 				F42201F3202E54F80027B7EA /* TextChange.swift in Sources */,
 				F478A49D2021FF090094A7F7 /* TableAccounts.swift in Sources */,
 				F478A4942021FEA80094A7F7 /* Keychain.swift in Sources */,
@@ -390,6 +391,7 @@
 				F42201F5202E582B0027B7EA /* Cache.swift in Sources */,
 				F49D85EB202D01CE00B16463 /* QRCode.swift in Sources */,
 				F478A4962021FEA80094A7F7 /* TextClick.swift in Sources */,
+				F4CAF1242033316400537C06 /* AccountData.swift in Sources */,
 				F4B78A74202348B0006E7BFC /* TableOperations.swift in Sources */,
 				F478A4952021FEA80094A7F7 /* Storage.swift in Sources */,
 				F4B78A7720235767006E7BFC /* TableTransactions.swift in Sources */,
@@ -401,40 +403,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F40859D3202F3EA9006DD5C1 /* TextClick.swift in Sources */,
-				F40859CE202F3E97006DD5C1 /* Cache.swift in Sources */,
-				F40859C6202F3E7F006DD5C1 /* ViewController.swift in Sources */,
 				F40859C3202F3E76006DD5C1 /* AppDelegate.swift in Sources */,
-				F40859CA202F3E8D006DD5C1 /* TableOperations.swift in Sources */,
-				F40859CB202F3E8F006DD5C1 /* TableTransactions.swift in Sources */,
-				F40859D2202F3EA6006DD5C1 /* TextChange.swift in Sources */,
-				F40859C7202F3E85006DD5C1 /* TableAccounts.swift in Sources */,
-				F40859CC202F3E92006DD5C1 /* TableEffects.swift in Sources */,
+				F40859C6202F3E7F006DD5C1 /* ViewController.swift in Sources */,
 				F40859C4202F3E79006DD5C1 /* Accounts.swift in Sources */,
 				F40859C5202F3E7C006DD5C1 /* AccountLedger.swift in Sources */,
-				F4A9BDDD201829EC00742C73 /* GalacticaTests.swift in Sources */,
-				F40859C1202F3C4C006DD5C1 /* Keychain.swift in Sources */,
+				F40859D3202F3EA9006DD5C1 /* TextClick.swift in Sources */,
+				F40859C7202F3E85006DD5C1 /* TableAccounts.swift in Sources */,
 				F40859C8202F3E88006DD5C1 /* TableAssets.swift in Sources */,
-				F40859D4202F3EAB006DD5C1 /* Utils.swift in Sources */,
+				F40859CB202F3E8F006DD5C1 /* TableTransactions.swift in Sources */,
+				F40859CA202F3E8D006DD5C1 /* TableOperations.swift in Sources */,
 				F40859C9202F3E8A006DD5C1 /* TablePayments.swift in Sources */,
-				F40859D0202F3EA0006DD5C1 /* Storage.swift in Sources */,
+				F40859CC202F3E92006DD5C1 /* TableEffects.swift in Sources */,
 				F40859CD202F3E95006DD5C1 /* TableOffers.swift in Sources */,
+				F40859D2202F3EA6006DD5C1 /* TextChange.swift in Sources */,
+				F40859C1202F3C4C006DD5C1 /* Keychain.swift in Sources */,
+				F40859D4202F3EAB006DD5C1 /* Utils.swift in Sources */,
+				F40859CE202F3E97006DD5C1 /* Cache.swift in Sources */,
+				F40859D0202F3EA0006DD5C1 /* Storage.swift in Sources */,
 				F40859CF202F3E9D006DD5C1 /* QRCode.swift in Sources */,
+				F4A9BDDD201829EC00742C73 /* GalacticaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		F4A8BCAE202FDDC8007D17C3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = StellarSDK;
-			targetProxy = F4A8BCAD202FDDC8007D17C3 /* PBXContainerItemProxy */;
-		};
 		F4A9BDDA201829EC00742C73 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F4A9BDC6201829EC00742C73 /* Galactica */;
 			targetProxy = F4A9BDD9201829EC00742C73 /* PBXContainerItemProxy */;
+		};
+		F4CAF11F2033155600537C06 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = StellarSDK;
+			targetProxy = F4CAF11E2033155600537C06 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -556,6 +558,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Galactica/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = Armonia.Galactica;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -577,6 +580,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Galactica/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = Armonia.Galactica;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

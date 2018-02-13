@@ -16,9 +16,7 @@ public class Keychain {
     @discardableResult
     class func save(_ key: String, _ secret: String) -> Bool {
         guard let data = secret.data(using: .utf8) else { return false }
-        print(data.bytes)
-        let tag  = (prefix + key) //.data(using: .utf8)!
-        print(tag) //.bytes)
+        let tag  = (prefix + key)
         let query: [String: Any] = [
             kSecClass       as String: kSecClassGenericPassword,
             kSecAttrAccount as String: tag,
@@ -32,7 +30,7 @@ public class Keychain {
     
     // let secretKey = Keychain.load("GA1234...")
     class func load(_ key: String) -> String {
-        let tag = (prefix + key) //.data(using: .utf8)!
+        let tag = (prefix + key)
         let query: [String: Any] = [
             kSecClass       as String : kSecClassGenericPassword,
             kSecAttrAccount as String : tag,

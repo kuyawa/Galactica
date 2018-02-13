@@ -11,8 +11,9 @@ import StellarSDK
 
 
 class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
-
+    
     var app = NSApp.delegate as! AppDelegate
+    var windowData: NSWindow = NSWindow()
     
     var selectedAccount = 0
     var refreshAccounts = false
@@ -102,8 +103,13 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
     //---- ACTIONS
     
     @IBAction func onKeychainClear(_ sender: NSMenuItem) {
-        //Keychain.clear()
+        Keychain.clear()
         print("Keychain cleared")
+    }
+    
+    @IBAction func onViewLogs(_ sender: NSMenuItem) {
+        //TODO: ViewLogs()
+        print("View Logs")
     }
     
     @IBAction func onTabAccounts(_ sender: AnyObject) {
@@ -117,17 +123,20 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
     
     @IBAction func onTabGenerate(_ sender: AnyObject) {
         tabMain.selectTabViewItem(at: 1)
+        buttonFriendbot.isEnabled = (buttonNetwork.selectedSegment == 1)
     }
     
-    // Not used? Remove
     @IBAction func onTabLedger(_ sender: AnyObject) {
         tabMain.selectTabViewItem(at: 2)
         if let tab = tabLedger.selectedTabViewItem {
             let num = tabLedger.indexOfTabViewItem(tab)
             if num < 1 && paymentsController.list.count < 1 {
-                let account = accountsController.list[selectedAccount]
-                paymentsController.load(from: account) { message in
-                    self.showStatus("Payments loaded")
+                if let account = getSelectedAccount() {
+                    paymentsController.load(from: account) { message in
+                        self.showStatus("Payments loaded")
+                    }
+                } else {
+                    showStatus("No accounts available")
                 }
             }
         }
@@ -136,8 +145,6 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
     @IBAction func onTabPayment(_ sender: AnyObject) {
         tabMain.selectTabViewItem(at: 3)
         loadAccountsPopup()
-        // TODO: remove when done testing
-        textPayAddress.stringValue = "GACNHBPK6ZC77G545PQSQ2V7RWS5SQ4W56E2DNRBMPDFEQBQMTEH3XFW"
     }
     
     @IBAction func onTabOptions(_ sender: AnyObject) {
@@ -178,11 +185,13 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
     }
     
     @IBAction func onAssetsRefresh(_ sender: Any) {
-        if selectedAccount < 0 || selectedAccount > accountsController.list.count-1 {
+        if selectedAccount < 0 || selectedAccount >= accountsController.list.count {
             return
         }
         loadAssets(selectedAccount)
     }
+    
+    
     
     @IBAction func onLedgerRefresh(_ sender: Any) {
         guard let tab = tabLedger.selectedTabViewItem else { return }
@@ -198,7 +207,18 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
         }
     }
     
-
+    // Copies public key to clipboard
+    func copy(_ sender: AnyObject?) {
+        if self.view.window?.firstResponder == tableAccounts {
+            guard let index = accountsController.tableView?.selectedRow, index >= 0, index < accountsController.list.count else { return }
+            let textCopy = accountsController.list[index].key
+            let pasteBoard = NSPasteboard.general()
+            pasteBoard.clearContents()
+            pasteBoard.setString(textCopy, forType: NSPasteboardTypeString)
+        } else {
+            print(sender.debugDescription)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -226,10 +246,12 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
         accountsController.list           = app.storage.accounts
         accountsController.tableView      = tableAccounts
         accountsController.tableSelection = loadAssets
+        tableAccounts.target              = accountsController
         tableAccounts.delegate            = accountsController
         tableAccounts.dataSource          = accountsController
-        tableAccounts.target              = accountsController
-        //tableAccounts.doubleAction = #selector(onSelectedAccount(_:))
+        //tableAccounts.acceptsFirstResponder = true
+        //tableAccounts.allowsTypeSelect  = true
+        //tableAccounts.doubleAction      = #selector(onSelectedAccount(_:))
         tableAccounts.reloadData()
         selectedAccount = 0
         loadAssets(0) // First account
@@ -254,6 +276,11 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
     
     func loadAssetsPopup(_ accountIndex: Int) {
         popupAssets.removeAllItems()
+        
+        if accountIndex < 0 || accountIndex >= app.storage.accounts.count {
+            showStatus("No accounts available")
+            return
+        }
         
         let key = app.storage.accounts[accountIndex].key
         
@@ -306,8 +333,7 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
         
         account.getBalances { balances in
             var assets: [AssetData] = []
-            print("Balances", balances)
-            print("Count", balances.count)
+            //print("Balances", balances)
             if balances.count < 1 {
                 DispatchQueue.main.async {
                     self.showAssets(assets)
@@ -351,6 +377,13 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
         //selectedAsset = 0
     }
     
+    
+    func getSelectedAccount() -> Storage.AccountData? {
+        let index = selectedAccount
+        if index < 0 || index >= accountsController.list.count { return nil }
+        return accountsController.list[index]
+    }
+    
     func tabView(_ tabView: NSTabView, didSelect tabViewItem: NSTabViewItem?) {
         guard let tab = tabViewItem else { return }
         let index = tabLedger.indexOfTabViewItem(tab)
@@ -390,3 +423,4 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
     
 }
 
+// END

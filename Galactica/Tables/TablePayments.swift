@@ -49,17 +49,16 @@ class TablePayments: NSObject, NSTableViewDataSource, NSTableViewDelegate {
         
         let item   = list[row]
         let cellId = column.identifier
-        //print(tableView.identifier)
         
         var text = ""
 
         switch cellId {
-        case "textDate"   : text = item.createdAt?.dateISO.string ?? "?"; break
-        case "textId"     : text = item.id   ?? "?"; break
-        case "textFrom"   : text = item.from ?? "?"; break
-        case "textTo"     : text = item.to   ?? "?"; break
-        case "textAmount" : text = item.amount?.money ?? "?"; break
-        case "textAsset"  : text = (item.assetType == "native" ? "XLM" : item.assetCode) ?? "?"
+        case "textDate"   : text = item.createdAt?.dateISO.string ?? ""; break
+        case "textId"     : text = item.id   ?? ""; break
+        case "textFrom"   : text = item.from ?? ""; break
+        case "textTo"     : text = item.to   ?? ""; break
+        case "textAmount" : text = item.amount?.money ?? ""; break
+        case "textAsset"  : text = (item.assetType == "native" ? "XLM" : item.assetCode) ?? ""
                             if item.typeInt == 0 { text = "XLM" } // Funding
                             break
         default           : text = "?"

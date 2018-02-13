@@ -47,8 +47,9 @@ extension String {
     var dateISO: Date {
         var date = Date(timeIntervalSince1970: 0)
         if !self.isEmpty {
-            let formatter = ISO8601DateFormatter()
-            //formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+            //let formatter = ISO8601DateFormatter() // Available on macOS 10.12
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
             date = formatter.date(from: self) ?? date
         }
         return date

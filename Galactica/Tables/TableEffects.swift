@@ -48,19 +48,18 @@ class TableEffects: NSObject, NSTableViewDataSource, NSTableViewDelegate {
         
         let item   = list[row]
         let cellId = column.identifier
-        //print(tableView.identifier)
         
         var text = ""
         
         switch cellId {
-        //case "textDate"    : text = item.createdAt?.dateISO.string ?? "?"; break
-        case "textId"      : text = item.id ?? "?"; break
-        case "textAccount" : text = item.account ?? "?"; break
-        case "textType"    : text = item.type ?? "?"; break
-        case "textAmount"  : text = item.amount?.money ?? "?"; break
-        case "textAsset"   : text = (item.assetType == "native" ? "XLM" : item.assetCode) ?? "?"; break
-        case "textIssuer"  : text = item.assetIssuer ?? "?"; break
-        default            : text = "?"
+        //case "textDate"    : text = item.createdAt?.dateISO.string ?? ""; break
+        case "textId"      : text = item.id ?? ""; break
+        case "textAccount" : text = item.account ?? ""; break
+        case "textType"    : text = item.type ?? ""; break
+        case "textAmount"  : text = item.amount?.money ?? ""; break
+        case "textAsset"   : text = (item.assetType == "native" ? "XLM" : item.assetCode) ?? ""; break
+        case "textIssuer"  : text = item.assetIssuer ?? ""; break
+        default            : text = ""
         }
         
         if let cell = tableView.make(withIdentifier: cellId, owner: self) as? NSTableCellView {

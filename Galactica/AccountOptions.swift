@@ -13,7 +13,7 @@ import StellarSDK
 // Extension for Account Options
 
 extension ViewController {
-    
+  
     @IBAction func onSetAccount(_ sender: Any) {
         //
     }
@@ -46,15 +46,19 @@ extension ViewController {
         setAccountData()
     }
     
+    @IBAction func onViewData(_ sender: Any) {
+        viewAccountData()
+    }
+    
     @IBAction func onFundAccount(_ sender: Any) {
         fundAccount()
     }
     
-    
+
     func getPopupAccount() -> StellarSDK.Account? {
         let selAcct = popupSetAccount.selectedTag()
         
-        guard selAcct > -1 else { showWarning("Select your sending account"); return nil }
+        guard selAcct > -1 else { showWarning("Select your account"); return nil }
         guard selAcct < app.storage.accounts.count else { showWarning("Account out of range in storage"); return nil }
         
         let source = app.storage.accounts[selAcct]
@@ -73,14 +77,14 @@ extension ViewController {
     func setAuthorization() {
         guard let account = getPopupAccount() else { return }
 
-        buttonSetOptions.isEnabled = false
-        showStatus("Setting authorization, please wait...")
-        
         let flags = StellarSDK.AccountAuthorizationFlags(
                         required : checkAuthRequired.state.on,
                         revocable: checkAuthRevocable.state.on,
                         immutable: checkAuthImmutable.state.on)
         
+        buttonSetOptions.isEnabled = false
+        showStatus("Setting authorization, please wait...")
+
         account.setAuthorization(flags) { response in
             var message = "Authorization has been set"
             
@@ -98,8 +102,8 @@ extension ViewController {
     
     func setInflation() {
         guard let account = getPopupAccount() else { return }
-        let destin = textSetInflation.stringValue
-        guard !destin.isEmpty else { showWarning("Inflation destination can not be empty"); return }
+        var destin = textSetInflation.stringValue.trimmingCharacters(in: .whitespacesAndNewlines)
+        if destin.isEmpty { destin = account.publicKey }  // Can't reset inflation dest, use same account
         
         buttonSetInflation.isEnabled = false
         showStatus("Setting inflation destination, please wait...")
@@ -158,9 +162,16 @@ extension ViewController {
         guard !issuer.isEmpty else { showWarning("Issuer address can not be empty"); return }
         
         let symbol = textChangeTrustAsset.stringValue
-        let limit  = Int64(textChangeTrustLimit.integerValue)
         guard !symbol.isEmpty else { showWarning("Asset can not be empty"); return }
         guard let asset = Asset(assetCode: symbol, issuer: issuer) else { showWarning("Invalid asset"); return }
+        
+        var limit = Int64.max  // Full trust
+        if !textChangeTrustLimit.stringValue.isEmpty {
+            limit = Int64(textChangeTrustLimit.integerValue)  // Limited trust
+        }
+        if textChangeTrustLimit.stringValue == "0" {
+            limit = 0  // Remove trust
+        }
         
         buttonChangeTrust.isEnabled = false
         showStatus("Changing asset trust, please wait...")
@@ -276,6 +287,44 @@ extension ViewController {
                 self.showStatus(message, response.error)
             }
         }
+    }
+    
+    func viewAccountData() {
+        guard let account = getPopupAccount() else { return }
+        
+        showStatus("Retrieving account data, please wait...")
+        
+        account.getAllData() { data in
+            let message = "Data has been loaded"
+            DispatchQueue.main.async {
+                self.showStatus(message)
+                self.showData(data)
+            }
+        }
+    }
+    
+    func showData(_ data: [String: String]) {
+        print(data)
+        print("Show data list")
+        
+        let storyboard = NSStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateController(withIdentifier: "accountDataController") as! AccountDataController
+        controller.setData(data)
+        windowData = NSWindow(contentViewController: controller)
+        windowData.title = "Account Data"
+        let app = NSApplication.shared()
+        app.runModal(for: windowData)
+
+        // Wait till modal is released
+        
+        print("Back from modal")
+        print(controller.selected ?? "?")
+        if let pair = controller.selected {
+            textDataKey.stringValue   = pair.key
+            textDataValue.stringValue = pair.val
+            textDataKey.becomeFirstResponder()
+        }
+        
     }
 }
 

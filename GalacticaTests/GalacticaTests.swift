@@ -9,9 +9,12 @@
 // Copy StellarSDK and CryptoSwift frameworks to ../DerivedData/galactica-xxx/build/products/debug/
 
 import XCTest
-//@testable import Galactica
 @testable import StellarSDK
-//@testable import CryptoSwift
+
+
+let testAddress = "GAMMLP3BRHWAIRNNSAKD7UXWFITNI3YODZV4CFQ7FSILIL7E6SKQWTTX"
+let testSecret  = "SDS54DFAILKMUWZOVIPN4Q4SSE33T4FEJP2MLOBEBNGFKINO46ZXXZDN"
+let testDestin  = "GAJ54B2Q73XHXMKLGUWNUQL5XZLIS3ML7MHRNICYBWBLQQDVESJJNNMJ"
 
 class GalacticaTests: XCTestCase {
     
@@ -41,19 +44,16 @@ class GalacticaTests: XCTestCase {
     
     func testKeychain() {
         print("\n---- \(#function)\n")
-        //Keychain.clear()
         
-        let key1 = "GAJ54B2Q73XHXMKLGUWNUQL5XZLIS3ML7MHRNICYBWBLQQDVESJJNNMJ"
-        //let sec1 = "SCIVXLVZPTN4JEH6KSIDBBJJF6ZSZRA7XKMVBC2XMP7XJWEMSMAR7ENO"
-        //let ok1 = Keychain.save(key1, sec1)
-        //print("OK1", ok1)
-        //Keychain.delete(key1)
+        let key1 = testAddress
+        let sec1 = "S12345..."
+        let ok1 = Keychain.save(key1, sec1)
+        print("OK1", ok1)
         
-        let key2 = "GACNHBPK6ZC77G545PQSQ2V7RWS5SQ4W56E2DNRBMPDFEQBQMTEH3XFW"
-        //let sec2 = "SAO2JJYRRKAULRMKFLYIREFZET5OZ4KOKHDCUXJQQ3VKGPROOTMN6JXF"
-        //let ok2 = Keychain.save(key2, sec2)
-        //print("OK2", ok2)
-        //Keychain.delete(key2)
+        let key2 = testDestin
+        let sec2 = "S98765..."
+        let ok2 = Keychain.save(key2, sec2)
+        print("OK2", ok2)
         
         let get1 = Keychain.load(key1)
         print("Sec1", get1)
@@ -61,14 +61,18 @@ class GalacticaTests: XCTestCase {
         let get2 = Keychain.load(key2)
         print("Sec2", get2)
         
-        XCTAssertTrue(true, "Error accessing keychain")
+        Keychain.delete(key1)
+        Keychain.delete(key2)
+        
+        //XCTAssertEqual(sec1, get1, "Error accessing keychain")
+        //XCTAssertEqual(sec2, get2, "Error accessing keychain")
     }
 
     func testAccountInfo() {
         print("\n---- \(#function)\n")
         
         let expect    = expectation(description: "ACCOUNT INFO")
-        let publicKey = "GAJ54B2Q73XHXMKLGUWNUQL5XZLIS3ML7MHRNICYBWBLQQDVESJJNNMJ"
+        let publicKey = testAddress
         let account   = StellarSDK.Account(publicKey, .test)
         
         account.getInfo { info in

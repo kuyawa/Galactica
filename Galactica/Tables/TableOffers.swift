@@ -48,19 +48,18 @@ class TableOffers: NSObject, NSTableViewDataSource, NSTableViewDelegate {
         
         let item   = list[row]
         let cellId = column.identifier
-        //print(tableView.identifier)
         
         var text = ""
         
         switch cellId {
-        //case "textDate"    : text = item.createdAt?.dateISO.string ?? "?"; break
-        case "textId"      : text = item.id?.str ?? "?"; break
-        case "textSeller"  : text = item.seller ?? "?"; break
-        case "textSelling" : text = (item.selling?.assetType == "native" ? "XLM" : item.selling?.assetCode) ?? "?"; break
-        case "textBuying"  : text = (item.buying?.assetType  == "native" ? "XLM" : item.buying?.assetCode) ?? "?"; break
-        case "textPrice"   : text = item.price?.money ?? "?"; break
-        case "textAmount"  : text = item.amount?.money ?? "?"; break
-        default            : text = "?"
+        //case "textDate"    : text = item.createdAt?.dateISO.string ?? ""; break
+        case "textId"      : text = item.id?.str ?? ""; break
+        case "textSeller"  : text = item.seller ?? ""; break
+        case "textSelling" : text = (item.selling?.assetType == "native" ? "XLM" : item.selling?.assetCode) ?? ""; break
+        case "textBuying"  : text = (item.buying?.assetType  == "native" ? "XLM" : item.buying?.assetCode) ?? ""; break
+        case "textPrice"   : text = item.price?.money ?? ""; break
+        case "textAmount"  : text = item.amount?.money ?? ""; break
+        default            : text = ""
         }
         
         if let cell = tableView.make(withIdentifier: cellId, owner: self) as? NSTableCellView {

@@ -48,19 +48,18 @@ class TableTransactions: NSObject, NSTableViewDataSource, NSTableViewDelegate {
         
         let item   = list[row]
         let cellId = column.identifier
-        //print(tableView.identifier)
         
         var text = ""
         
         switch cellId {
-        case "textDate"   : text = item.createdAt?.dateISO.string ?? "?"; break
-        case "textId"     : text = item.id ?? "?"; break
+        case "textDate"   : text = item.createdAt?.dateISO.string ?? ""; break
+        case "textId"     : text = item.id ?? ""; break
         case "textLedger" : text = item.ledger.str; break
-        case "textSource" : text = item.sourceAccount ?? "?"; break
+        case "textSource" : text = item.sourceAccount ?? ""; break
         case "textCount"  : text = item.operationCount.str; break
         case "textFee"    : text = item.feePaid.str; break
         case "textMemo"   : text = item.memo ?? ""; break
-        default           : text = "?"
+        default           : text = ""
         }
         
         if let cell = tableView.make(withIdentifier: cellId, owner: self) as? NSTableCellView {
