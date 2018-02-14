@@ -12,6 +12,7 @@ import StellarSDK
 
 class TableEffects: NSObject, NSTableViewDataSource, NSTableViewDelegate {
     
+    var app = NSApp.delegate as! AppDelegate
     var tableView: NSTableView?
     var tableSelection: (_ selected: Int) -> () = { index in }
     var list: [StellarSDK.EffectResponse] = []
@@ -24,6 +25,7 @@ class TableEffects: NSObject, NSTableViewDataSource, NSTableViewDelegate {
         let account = StellarSDK.Account(address, network)
         
         account.getEffects(cursor: nil, limit: 20, order: .desc) { response in
+            self.app.log("Effects:", response.raw)
             if response.error != nil {
                 onReady(response.error!.text)
                 return

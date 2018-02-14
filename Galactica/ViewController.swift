@@ -14,6 +14,7 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
     
     var app = NSApp.delegate as! AppDelegate
     var windowData: NSWindow = NSWindow()
+    //var windowLogs: NSWindow = NSWindow()
     
     var selectedAccount = 0
     var refreshAccounts = false
@@ -102,14 +103,13 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
     
     //---- ACTIONS
     
-    @IBAction func onKeychainClear(_ sender: NSMenuItem) {
-        Keychain.clear()
-        print("Keychain cleared")
+    @IBAction func onViewLogs(_ sender: NSMenuItem) {
+        app.console.showWindow(nil)
     }
     
-    @IBAction func onViewLogs(_ sender: NSMenuItem) {
-        //TODO: ViewLogs()
-        print("View Logs")
+    @IBAction func onKeychainClear(_ sender: NSMenuItem) {
+        Keychain.clear()
+        app.log("Keychain cleared")
     }
     
     @IBAction func onTabAccounts(_ sender: AnyObject) {
@@ -207,7 +207,7 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
         }
     }
     
-    // Copies public key to clipboard
+    // Copy public key to clipboard
     func copy(_ sender: AnyObject?) {
         if self.view.window?.firstResponder == tableAccounts {
             guard let index = accountsController.tableView?.selectedRow, index >= 0, index < accountsController.list.count else { return }
@@ -215,8 +215,6 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
             let pasteBoard = NSPasteboard.general()
             pasteBoard.clearContents()
             pasteBoard.setString(textCopy, forType: NSPasteboardTypeString)
-        } else {
-            print(sender.debugDescription)
         }
     }
 
@@ -249,9 +247,6 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
         tableAccounts.target              = accountsController
         tableAccounts.delegate            = accountsController
         tableAccounts.dataSource          = accountsController
-        //tableAccounts.acceptsFirstResponder = true
-        //tableAccounts.allowsTypeSelect  = true
-        //tableAccounts.doubleAction      = #selector(onSelectedAccount(_:))
         tableAccounts.reloadData()
         selectedAccount = 0
         loadAssets(0) // First account
@@ -333,7 +328,7 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
         
         account.getBalances { balances in
             var assets: [AssetData] = []
-            //print("Balances", balances)
+            self.log("Balances", balances)
             if balances.count < 1 {
                 DispatchQueue.main.async {
                     self.showAssets(assets)
@@ -421,6 +416,10 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
         textStatus.stringValue = ""
     }
     
+    func log(_ args: Any...) {
+        app.log(args)
+    }
+
 }
 
 // END

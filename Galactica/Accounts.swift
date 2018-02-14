@@ -60,10 +60,10 @@ extension ViewController {
         
         let server  = StellarSDK.Horizon.test
         server.friendbot(address: address) { response in
+            self.log("Raw:", response.raw)
             var message = "Account funded!"
             
             if let status = response.json["status"] as? Int, status == 400 {
-                print("Raw:", response.raw)
                 message = "Error funding account. Try again later"
             }
             
@@ -166,10 +166,10 @@ extension ViewController {
 
         account.useNetwork(source.net == "Live" ? .live : .test)
         account.payment(address: address, amount: amount, asset: asset, memo: memoText) { response in
+            self.log("\nResponse", response.raw)
             var message = "Payment sent"
             
             if response.error {
-                print("\nResponse", response.raw)
                 message = "Error sending payment, try again later"
             }
             
@@ -180,3 +180,6 @@ extension ViewController {
         }
     }
 }
+
+
+// END

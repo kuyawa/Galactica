@@ -11,23 +11,19 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
-    let testAccount = "GAJ54B2Q73XHXMKLGUWNUQL5XZLIS3ML7MHRNICYBWBLQQDVESJJNNMJ"  // Read-only mode
+    let debug       = true
     let storage     = Storage()
     let cache       = AppCache()
+    let console     = LogWindow(windowNibName: "LogWindow")
+    let testAccount = "GAJ54B2Q73XHXMKLGUWNUQL5XZLIS3ML7MHRNICYBWBLQQDVESJJNNMJ"  // Read-only mode
 
-    override init() {
-        print("Hello")
-        super.init()
-    }
-
-    func applicationWillTerminate(_ aNotification: Notification) {
-        print("Goodbye")
-    }
-    
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
         return true
     }
 
+    func log(_ args: Any...) {
+        if debug { print(args); console.log(args) }
+    }
 }
 
 // END

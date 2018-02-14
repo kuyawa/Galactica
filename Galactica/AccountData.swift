@@ -40,7 +40,6 @@ class AccountDataController: NSViewController, NSTableViewDataSource, NSTableVie
     }
     
     func loadData() {
-        print("Loading data")
         tableData.removeAll()
             
         for (key, val) in dixy {
@@ -94,15 +93,15 @@ extension AccountDataController : NSWindowDelegate {
     func windowShouldClose(_ sender: Any) -> Bool {
         // This method is called form the red button in the window bar
         // Return false to avoid closing it
-        print("Should close")
+        // print("Should close")
         self.selected = getSelectedItem()
         return true
     }
     
     func windowWillClose(_ notification: Notification) {
         // This method is called from anywhere after the window is closed
-        print("Will close")
-        //self.view.window?.close()
+        // print("Will close")
+        // self.view.window?.close()
         let app = NSApplication.shared()
         app.stopModal()
     }

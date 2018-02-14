@@ -12,6 +12,7 @@ import StellarSDK
 
 class TableOffers: NSObject, NSTableViewDataSource, NSTableViewDelegate {
     
+    var app = NSApp.delegate as! AppDelegate
     var tableView: NSTableView?
     var tableSelection: (_ selected: Int) -> () = { index in }
     var list: [StellarSDK.OfferResponse] = []
@@ -24,6 +25,7 @@ class TableOffers: NSObject, NSTableViewDataSource, NSTableViewDelegate {
         let account = StellarSDK.Account(address, network)
         
         account.getOffers(cursor: nil, limit: 20, order: .desc) { response in
+            self.app.log("Offers:", response.raw)
             if response.error != nil {
                 onReady(response.error!.text)
                 return

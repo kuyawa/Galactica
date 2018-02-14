@@ -24,9 +24,11 @@
 		F40859D0202F3EA0006DD5C1 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F478A4922021FEA80094A7F7 /* Storage.swift */; };
 		F40859D2202F3EA6006DD5C1 /* TextChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42201F2202E54F80027B7EA /* TextChange.swift */; };
 		F40859D3202F3EA9006DD5C1 /* TextClick.swift in Sources */ = {isa = PBXBuildFile; fileRef = F478A4932021FEA80094A7F7 /* TextClick.swift */; };
-		F40859D4202F3EAB006DD5C1 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B6B0DC2022AFC100C8C4F2 /* Utils.swift */; };
+		F40859D4202F3EAB006DD5C1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B6B0DC2022AFC100C8C4F2 /* Extensions.swift */; };
 		F42201F3202E54F80027B7EA /* TextChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42201F2202E54F80027B7EA /* TextChange.swift */; };
 		F42201F5202E582B0027B7EA /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42201F4202E582B0027B7EA /* Cache.swift */; };
+		F431907F2033A8C4000E3B0D /* LogWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F431907D2033A8C4000E3B0D /* LogWindow.swift */; };
+		F43190802033A8C4000E3B0D /* LogWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = F431907E2033A8C4000E3B0D /* LogWindow.xib */; };
 		F478A4942021FEA80094A7F7 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F478A4912021FEA80094A7F7 /* Keychain.swift */; };
 		F478A4952021FEA80094A7F7 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F478A4922021FEA80094A7F7 /* Storage.swift */; };
 		F478A4962021FEA80094A7F7 /* TextClick.swift in Sources */ = {isa = PBXBuildFile; fileRef = F478A4932021FEA80094A7F7 /* TextClick.swift */; };
@@ -42,7 +44,7 @@
 		F4A9BDD2201829EC00742C73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4A9BDD0201829EC00742C73 /* Main.storyboard */; };
 		F4A9BDDD201829EC00742C73 /* GalacticaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A9BDDC201829EC00742C73 /* GalacticaTests.swift */; };
 		F4B6B0D82022943500C8C4F2 /* TablePayments.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B6B0D72022943500C8C4F2 /* TablePayments.swift */; };
-		F4B6B0DD2022AFC100C8C4F2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B6B0DC2022AFC100C8C4F2 /* Utils.swift */; };
+		F4B6B0DD2022AFC100C8C4F2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B6B0DC2022AFC100C8C4F2 /* Extensions.swift */; };
 		F4B78A74202348B0006E7BFC /* TableOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B78A73202348B0006E7BFC /* TableOperations.swift */; };
 		F4B78A7720235767006E7BFC /* TableTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B78A7620235767006E7BFC /* TableTransactions.swift */; };
 		F4B78A7920235DFD006E7BFC /* TableEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B78A7820235DFD006E7BFC /* TableEffects.swift */; };
@@ -104,6 +106,8 @@
 		F40859C0202F2E68006DD5C1 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; wrapsLines = 1; };
 		F42201F2202E54F80027B7EA /* TextChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextChange.swift; sourceTree = "<group>"; };
 		F42201F4202E582B0027B7EA /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		F431907D2033A8C4000E3B0D /* LogWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogWindow.swift; sourceTree = "<group>"; };
+		F431907E2033A8C4000E3B0D /* LogWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogWindow.xib; sourceTree = "<group>"; };
 		F478A4912021FEA80094A7F7 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		F478A4922021FEA80094A7F7 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		F478A4932021FEA80094A7F7 /* TextClick.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextClick.swift; sourceTree = "<group>"; };
@@ -124,7 +128,7 @@
 		F4A9BDDC201829EC00742C73 /* GalacticaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalacticaTests.swift; sourceTree = "<group>"; };
 		F4A9BDF5201830A200742C73 /* ToDo.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ToDo.txt; sourceTree = "<group>"; };
 		F4B6B0D72022943500C8C4F2 /* TablePayments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TablePayments.swift; sourceTree = "<group>"; wrapsLines = 0; };
-		F4B6B0DC2022AFC100C8C4F2 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		F4B6B0DC2022AFC100C8C4F2 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F4B78A73202348B0006E7BFC /* TableOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableOperations.swift; sourceTree = "<group>"; };
 		F4B78A7620235767006E7BFC /* TableTransactions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableTransactions.swift; sourceTree = "<group>"; };
 		F4B78A7820235DFD006E7BFC /* TableEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableEffects.swift; sourceTree = "<group>"; wrapsLines = 0; };
@@ -158,12 +162,14 @@
 			isa = PBXGroup;
 			children = (
 				F42201F4202E582B0027B7EA /* Cache.swift */,
+				F4B6B0DC2022AFC100C8C4F2 /* Extensions.swift */,
 				F478A4912021FEA80094A7F7 /* Keychain.swift */,
 				F49D85EA202D01CE00B16463 /* QRCode.swift */,
 				F478A4922021FEA80094A7F7 /* Storage.swift */,
 				F42201F2202E54F80027B7EA /* TextChange.swift */,
 				F478A4932021FEA80094A7F7 /* TextClick.swift */,
-				F4B6B0DC2022AFC100C8C4F2 /* Utils.swift */,
+				F431907D2033A8C4000E3B0D /* LogWindow.swift */,
+				F431907E2033A8C4000E3B0D /* LogWindow.xib */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -357,6 +363,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F43190802033A8C4000E3B0D /* LogWindow.xib in Resources */,
 				F4A9BDCF201829EC00742C73 /* Assets.xcassets in Resources */,
 				F4A9BDD2201829EC00742C73 /* Main.storyboard in Resources */,
 			);
@@ -381,7 +388,7 @@
 				F494378920224A93006CC8DB /* Accounts.swift in Sources */,
 				F494378B20224D93006CC8DB /* AccountLedger.swift in Sources */,
 				F4A0A2F2202F76B600DCED49 /* AccountOptions.swift in Sources */,
-				F4B6B0DD2022AFC100C8C4F2 /* Utils.swift in Sources */,
+				F4B6B0DD2022AFC100C8C4F2 /* Extensions.swift in Sources */,
 				F4B6B0D82022943500C8C4F2 /* TablePayments.swift in Sources */,
 				F42201F3202E54F80027B7EA /* TextChange.swift in Sources */,
 				F478A49D2021FF090094A7F7 /* TableAccounts.swift in Sources */,
@@ -393,6 +400,7 @@
 				F478A4962021FEA80094A7F7 /* TextClick.swift in Sources */,
 				F4CAF1242033316400537C06 /* AccountData.swift in Sources */,
 				F4B78A74202348B0006E7BFC /* TableOperations.swift in Sources */,
+				F431907F2033A8C4000E3B0D /* LogWindow.swift in Sources */,
 				F478A4952021FEA80094A7F7 /* Storage.swift in Sources */,
 				F4B78A7720235767006E7BFC /* TableTransactions.swift in Sources */,
 				F4B78A7920235DFD006E7BFC /* TableEffects.swift in Sources */,
@@ -417,7 +425,7 @@
 				F40859CD202F3E95006DD5C1 /* TableOffers.swift in Sources */,
 				F40859D2202F3EA6006DD5C1 /* TextChange.swift in Sources */,
 				F40859C1202F3C4C006DD5C1 /* Keychain.swift in Sources */,
-				F40859D4202F3EAB006DD5C1 /* Utils.swift in Sources */,
+				F40859D4202F3EAB006DD5C1 /* Extensions.swift in Sources */,
 				F40859CE202F3E97006DD5C1 /* Cache.swift in Sources */,
 				F40859D0202F3EA0006DD5C1 /* Storage.swift in Sources */,
 				F40859CF202F3E9D006DD5C1 /* QRCode.swift in Sources */,

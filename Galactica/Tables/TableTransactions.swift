@@ -12,6 +12,7 @@ import StellarSDK
 
 class TableTransactions: NSObject, NSTableViewDataSource, NSTableViewDelegate {
     
+    var app = NSApp.delegate as! AppDelegate
     var tableView: NSTableView?
     var tableSelection: (_ selected: Int) -> () = { index in }
     var list: [StellarSDK.TransactionResponse] = []
@@ -24,6 +25,7 @@ class TableTransactions: NSObject, NSTableViewDataSource, NSTableViewDelegate {
         let account = StellarSDK.Account(address, network)
         
         account.getTransactions(cursor: nil, limit: 20, order: .desc) { response in
+            self.app.log("Transactions:", response.raw)
             if response.error != nil {
                 onReady(response.error!.text)
                 return
