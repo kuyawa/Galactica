@@ -328,7 +328,7 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
         
         account.getBalances { balances in
             var assets: [AssetData] = []
-            self.log("Balances", balances)
+            self.app.log("Balances", balances)
             if balances.count < 1 {
                 DispatchQueue.main.async {
                     self.showAssets(assets)
@@ -416,10 +416,6 @@ class ViewController: NSViewController, NSTextDelegate, NSTabViewDelegate  {
         textStatus.stringValue = ""
     }
     
-    func log(_ args: Any...) {
-        app.log(args)
-    }
-
 }
 
 // END

@@ -25,7 +25,7 @@ class TablePayments: NSObject, NSTableViewDataSource, NSTableViewDelegate {
         let account = StellarSDK.Account(address, network)
         
         account.getPayments(cursor: nil, limit: 20, order: .desc) { response in
-            self.app.log("Payments:", response.raw)
+            self.app.log("Payments:", response.raw ?? "?")
             if response.error != nil {
                 onReady(response.error!.text)
                 return

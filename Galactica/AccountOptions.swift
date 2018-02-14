@@ -86,7 +86,7 @@ extension ViewController {
         showStatus("Setting authorization, please wait...")
 
         account.setAuthorization(flags) { response in
-            self.log("\nResponse", response.raw)
+            self.app.log("\nResponse", response.raw)
             var message = "Authorization has been set"
             
             if response.error {
@@ -109,7 +109,7 @@ extension ViewController {
         showStatus("Setting inflation destination, please wait...")
         
         account.setInflation(address: destin, memo: "Inflation") { response in
-            self.log("\nResponse", response.raw)
+            self.app.log("\nResponse", response.raw)
             var message = "Inflation destination has been set"
             
             if response.error {
@@ -141,7 +141,7 @@ extension ViewController {
         showStatus("Allowing asset trust, please wait...")
         
         account.allowTrust(address: address, asset: asset, authorize: authorize) { response in
-            self.log("\nResponse", response.raw)
+            self.app.log("\nResponse", response.raw)
             var message = "Asset has been trusted!"
             
             if response.error {
@@ -177,7 +177,7 @@ extension ViewController {
         showStatus("Changing asset trust, please wait...")
         
         account.changeTrust(asset: asset, limit: limit) { response in
-            self.log("\nResponse", response.raw)
+            self.app.log("\nResponse", response.raw)
             var message = "Asset trust has been changed!"
             
             if response.error {
@@ -200,7 +200,7 @@ extension ViewController {
         let url = textHomeDomain.stringValue
         
         account.setHomeDomain(url) { response in
-            self.log("\nResponse", response.raw)
+            self.app.log("\nResponse", response.raw)
             var message = "Home domain has been set"
             
             if response.error {
@@ -224,7 +224,7 @@ extension ViewController {
         let val = textDataValue.stringValue
         
         account.setData(key, val) { response in
-            self.log("\nResponse", response.raw)
+            self.app.log("\nResponse", response.raw)
             var message = "Data value has been set"
             
             if response.error {
@@ -248,7 +248,7 @@ extension ViewController {
         showStatus("Merging accounts, please wait...")
         
         account.merge(address: address) { response in
-            self.log("\nResponse", response.raw)
+            self.app.log("\nResponse", response.raw)
             var message = "Accounts have been merged!"
             
             if response.error {
@@ -275,7 +275,7 @@ extension ViewController {
         showStatus("Funding account, please wait...")
         
         account.createAccount(address: destin, amount: amount, memo: "Funded by Galactica") { response in
-            self.log("\nResponse", response.raw)
+            self.app.log("\nResponse", response.raw)
             var message = "Account has been funded!"
             
             if response.error {
@@ -304,16 +304,14 @@ extension ViewController {
     }
     
     func showData(_ data: [String: String]) {
-        print(data)
-        print("Show data list")
-        
+        app.log("Account Data:", data)
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateController(withIdentifier: "accountDataController") as! AccountDataController
         controller.setData(data)
         windowData = NSWindow(contentViewController: controller)
         windowData.title = "Account Data"
-        let app = NSApplication.shared()
-        app.runModal(for: windowData)
+        let runner = NSApplication.shared()
+        runner.runModal(for: windowData)
 
         // Wait till modal is released
         
@@ -322,7 +320,6 @@ extension ViewController {
             textDataValue.stringValue = pair.val
             textDataKey.becomeFirstResponder()
         }
-        
     }
 }
 

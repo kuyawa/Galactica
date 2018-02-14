@@ -18,20 +18,24 @@ class LogWindow: NSWindowController {
     
     override func windowDidLoad() {
         super.windowDidLoad()
-        print("logWin loaded")
+        //print("Console loaded")
     }
 
-    func log(_ args: Any...) {
-        let list = [args]
-        let text = NSMutableAttributedString()
+    func log(_ args: [Any]) {
+        guard textLog != nil, textLog.textStorage != nil else { return }
+        var text = "\n"
         
-        for item in list {
-            text.append(NSAttributedString(string: String(describing: item) + "\n"))
+        for item in args {
+            print(item)
+            if let str = item as? String {
+                text.append(str+"\n")
+            } else {
+                text.append("\(item)\n")
+            }
         }
         
-        if textLog != nil && textLog.textStorage != nil {
-            textLog.textStorage!.append(text)
-            textLog.font = NSFont(name: "Monaco", size: 12.0)
-        }
+        //textLog.textStorage!.append(text)
+        textLog.string?.append(text)
+        textLog.font = NSFont(name: "Monaco", size: 12.0)
     }
 }

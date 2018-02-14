@@ -22,7 +22,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func log(_ args: Any...) {
-        if debug { print(args); console.log(args) }
+        if debug {
+            DispatchQueue.main.async { self.console.log(args) }
+        }
     }
 }
 

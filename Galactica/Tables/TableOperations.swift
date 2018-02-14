@@ -25,7 +25,7 @@ class TableOperations: NSObject, NSTableViewDataSource, NSTableViewDelegate {
         let account = StellarSDK.Account(address, network)
         
         account.getOperations(cursor: nil, limit: 20, order: .desc) { response in
-            self.app.log("Operations:", response.raw)
+            self.app.log("Operations:", response.raw ?? "?")
             if response.error != nil {
                 onReady(response.error!.text)
                 return
