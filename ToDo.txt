@@ -1,6 +1,5 @@
 TODO:
 
-- Menu/Galactica/View Logs/ show raw response for every request
 - Prepare Github repo, upload all
 - Take screenshots of all views
 - Set initial account options in form, cache info
@@ -12,6 +11,7 @@ TODO:
 
 DONE:
 
+x Menu/Galactica/View Logs/ show raw response for every request
 x Remove all prints from app and sdk
 x List view for showing account data
 x View icon for account data fields
