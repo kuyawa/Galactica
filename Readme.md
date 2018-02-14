@@ -1,15 +1,16 @@
 # GALACTICA
 
-**Galactica** is a desktop client for macOS showcasing the power of the StellarSDK, a great library for building macOS and iOS apps.
+**Galactica** is a desktop client for macOS showcasing the power of the [StellarSDK in Swift](https://github.com/kuyawa/StellarSDK), an awesome library for building macOS and iOS apps.
 
 With Galactica you can control multiple wallets and assets, check their balances and send payments, query all transactions, operations, payments, effects, orders, etc, and modify account options like authorization flags, inflation destination, allow and change trustlines, merge accounts and many more.
 
 Designed to be the simplest and easiest desktop client for Stellar preserving a totally native Mac experience built in Swift, take a look:
 
-![Screenshot1](media/screenshot1.jpg)
-![Screenshot2](media/screenshot2.jpg)
-![Screenshot3](media/screenshot3.jpg)
-![Screenshot4](media/screenshot4.jpg)
+![Main](./media/galtmain.jpg)
+![Account](./media/galtnew.jpg)
+![Payment](./media/galtpay.jpg)
+![Ledger](./media/galtled.jpg)
+![Options](./media/galtset.jpg)
 
 
 ## How to Use
@@ -31,7 +32,7 @@ Disclaimer: *Never trust any app download from the internet unless they are peer
 
 ## External Libraries
 
-- StellarSDK in Swift, developed by Kuyawa Kata
+- [StellarSDK in Swift](https://github.com/kuyawa/StellarSDK), developed by Kuyawa Kata
 
 ## Donations
 

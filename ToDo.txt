@@ -1,7 +1,5 @@
 TODO:
 
-- Prepare Github repo, upload all
-- Take screenshots of all views
 - Set initial account options in form, cache info
 - On account selected set refresh ledger to true
 - Cache balances
@@ -11,8 +9,8 @@ TODO:
 
 DONE:
 
-x Menu/Galactica/View Logs/ show raw response for every request
 x Remove all prints from app and sdk
+x Menu/Galactica/View Logs/ show raw response for every request
 x List view for showing account data
 x View icon for account data fields
 x Set data not working, padding with zeroes in multiple of four bytes fixed it
